@@ -1,0 +1,1164 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: FTA Playbook
+      - generic [ref=e5]: Opptra Internal
+    - generic [ref=e6]:
+      - generic [ref=e7]: Synced 54 min ago
+      - button "Resync now" [ref=e8]
+  - main [ref=e9]:
+    - heading "FTA Eligibility & COO Playbook" [level=1] [ref=e10]:
+      - text: FTA
+      - emphasis [ref=e11]: Eligibility
+      - text: "& COO Playbook"
+    - paragraph [ref=e12]: Pick a trade lane, then a product, to surface the applicable FTA and the steps to claim preferential treatment.
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]: "1"
+        - generic [ref=e16]:
+          - heading "Select Trade Lane" [level=2] [ref=e17]
+          - paragraph [ref=e18]: Choose origin and destination to identify the applicable FTA
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: Origin
+          - generic [ref=e22]:
+            - combobox [ref=e23]:
+              - option "— Select origin —" [selected]
+              - option "Afghanistan"
+              - option "Albania"
+              - option "Algeria"
+              - option "Angola"
+              - option "Argentina"
+              - option "Australia"
+              - option "Austria"
+              - option "Bahrain"
+              - option "Bangladesh"
+              - option "Belarus"
+              - option "Belgium"
+              - option "Bhutan"
+              - option "Bolivia"
+              - option "Bosnia and Herzegovina"
+              - option "Brazil"
+              - option "Brunei"
+              - option "Bulgaria"
+              - option "Cambodia"
+              - option "Canada"
+              - option "Chile"
+              - option "China"
+              - option "Colombia"
+              - option "Costa Rica"
+              - option "Cote d'Ivoire"
+              - option "Croatia"
+              - option "Cuba"
+              - option "Cyprus"
+              - option "Czechia"
+              - option "Denmark"
+              - option "Dominican Republic"
+              - option "Ecuador"
+              - option "Egypt"
+              - option "El Salvador"
+              - option "Estonia"
+              - option "Ethiopia"
+              - option "Fiji"
+              - option "Finland"
+              - option "France"
+              - option "Germany"
+              - option "Ghana"
+              - option "Greece"
+              - option "Guatemala"
+              - option "Honduras"
+              - option "Hong Kong"
+              - option "Hungary"
+              - option "Iceland"
+              - option "India"
+              - option "Indonesia"
+              - option "Iran"
+              - option "Iraq"
+              - option "Ireland"
+              - option "Israel"
+              - option "Italy"
+              - option "Jamaica"
+              - option "Japan"
+              - option "Jordan"
+              - option "Kazakhstan"
+              - option "Kenya"
+              - option "Korea"
+              - option "Kuwait"
+              - option "Kyrgyzstan"
+              - option "Laos"
+              - option "Latvia"
+              - option "Lebanon"
+              - option "Liechtenstein"
+              - option "Lithuania"
+              - option "Luxembourg"
+              - option "Madagascar"
+              - option "Malaysia"
+              - option "Maldives"
+              - option "Malta"
+              - option "Mauritius"
+              - option "Mexico"
+              - option "Moldova"
+              - option "Mongolia"
+              - option "Montenegro"
+              - option "Morocco"
+              - option "Myanmar"
+              - option "Nepal"
+              - option "Netherlands"
+              - option "New Zealand"
+              - option "Nicaragua"
+              - option "Nigeria"
+              - option "North Macedonia"
+              - option "Norway"
+              - option "Oman"
+              - option "Pakistan"
+              - option "Palestine"
+              - option "Panama"
+              - option "Papua New Guinea"
+              - option "Paraguay"
+              - option "Peru"
+              - option "Philippines"
+              - option "Poland"
+              - option "Portugal"
+              - option "Qatar"
+              - option "Romania"
+              - option "Russia"
+              - option "Rwanda"
+              - option "Samoa"
+              - option "Saudi Arabia"
+              - option "Senegal"
+              - option "Serbia"
+              - option "Singapore"
+              - option "Slovakia"
+              - option "Slovenia"
+              - option "Solomon Islands"
+              - option "South Africa"
+              - option "Spain"
+              - option "Sri Lanka"
+              - option "Sweden"
+              - option "Switzerland"
+              - option "Syria"
+              - option "Taiwan"
+              - option "Tajikistan"
+              - option "Tanzania"
+              - option "Thailand"
+              - option "Trinidad and Tobago"
+              - option "Tunisia"
+              - option "Turkey"
+              - option "Turkmenistan"
+              - option "UAE"
+              - option "Uganda"
+              - option "UK"
+              - option "Ukraine"
+              - option "Uruguay"
+              - option "USA"
+              - option "Uzbekistan"
+              - option "Venezuela"
+              - option "Vietnam"
+              - option "Yemen"
+              - option "Zambia"
+              - option "Zimbabwe"
+            - img
+        - generic [ref=e24]: →
+        - generic [ref=e25]:
+          - generic [ref=e26]: Destination
+          - generic [ref=e27]:
+            - combobox [disabled] [ref=e28]:
+              - option "— Select origin first —" [selected]
+            - img
+      - generic [ref=e29]:
+        - checkbox "This shipment involves a Free Zone / SEZ" [ref=e30]
+        - generic [ref=e31]: This shipment involves a Free Zone / SEZ
+    - generic [ref=e32]:
+      - heading "All FTA Lanes — Quick Reference" [level=2] [ref=e33]
+      - paragraph [ref=e34]: Configured trade lanes, applicable agreements, and Certificate of Origin types
+      - textbox "Search by country, FTA, or COO…" [ref=e35]
+      - table [ref=e37]:
+        - rowgroup [ref=e38]:
+          - row "Origin Destination FTA Free Zone COO Notes" [ref=e39]:
+            - columnheader "Origin" [ref=e40]
+            - columnheader "Destination" [ref=e41]
+            - columnheader "FTA" [ref=e42]
+            - columnheader "Free Zone" [ref=e43]
+            - columnheader "COO" [ref=e44]
+            - columnheader "Notes" [ref=e45]
+        - rowgroup [ref=e46]:
+          - row "Turkey UAE TR-UAE CEPA Turkey-UAE CEPA COO In force Sep 2023. Targets USD 40B bilateral trade." [ref=e47]:
+            - cell "Turkey" [ref=e48]
+            - cell "UAE" [ref=e49]
+            - cell "TR-UAE CEPA" [ref=e50]
+            - cell [ref=e51]
+            - cell "Turkey-UAE CEPA COO" [ref=e52]
+            - cell "In force Sep 2023. Targets USD 40B bilateral trade." [ref=e53]
+          - row "UK Australia CPTPP UK-Australia FTA / CPTPP Certification UK-Australia FTA (2023) + CPTPP (2024). Use whichever gives best outcome." [ref=e54]:
+            - cell "UK" [ref=e55]
+            - cell "Australia" [ref=e56]
+            - cell "CPTPP" [ref=e57]
+            - cell [ref=e58]
+            - cell "UK-Australia FTA / CPTPP Certification" [ref=e59]
+            - cell "UK-Australia FTA (2023) + CPTPP (2024). Use whichever gives best outcome." [ref=e60]
+          - row "Japan Korea RCEP Form RCEP No bilateral Japan-Korea FTA; RCEP is the only preferential scheme." [ref=e61]:
+            - cell "Japan" [ref=e62]
+            - cell "Korea" [ref=e63]
+            - cell "RCEP" [ref=e64]
+            - cell [ref=e65]
+            - cell "Form RCEP" [ref=e66]
+            - cell "No bilateral Japan-Korea FTA; RCEP is the only preferential scheme." [ref=e67]
+          - row "Korea USA KORUS KORUS Certificate of Origin In force 2012; revised 2018. Self-certification; retain records 5 years." [ref=e68]:
+            - cell "Korea" [ref=e69]
+            - cell "USA" [ref=e70]
+            - cell "KORUS" [ref=e71]
+            - cell [ref=e72]
+            - cell "KORUS Certificate of Origin" [ref=e73]
+            - cell "In force 2012; revised 2018. Self-certification; retain records 5 years." [ref=e74]
+          - row "Hong Kong India No FTA Standard Invoice No bilateral FTA. HK is a free port so HK → India bears Indian MFN duties." [ref=e75]:
+            - cell "Hong Kong" [ref=e76]
+            - cell "India" [ref=e77]
+            - cell "No FTA" [ref=e78]
+            - cell [ref=e79]
+            - cell "Standard Invoice" [ref=e80]
+            - cell "No bilateral FTA. HK is a free port so HK → India bears Indian MFN duties." [ref=e81]
+          - row "Switzerland India EFTA-India TEPA EFTA-India TEPA Origin Declaration Signed Mar 2024, operational 2025. CTH + 40% VA. Verify CBIC operational notification before claiming preference." [ref=e82]:
+            - cell "Switzerland" [ref=e83]
+            - cell "India" [ref=e84]
+            - cell "EFTA-India TEPA" [ref=e85]
+            - cell [ref=e86]
+            - cell "EFTA-India TEPA Origin Declaration" [ref=e87]
+            - cell "Signed Mar 2024, operational 2025. CTH + 40% VA. Verify CBIC operational notification before claiming preference." [ref=e88]
+          - row "Korea UAE No FTA Standard Invoice Korea-GCC FTA negotiations relaunched 2022; not yet concluded." [ref=e89]:
+            - cell "Korea" [ref=e90]
+            - cell "UAE" [ref=e91]
+            - cell "No FTA" [ref=e92]
+            - cell [ref=e93]
+            - cell "Standard Invoice" [ref=e94]
+            - cell "Korea-GCC FTA negotiations relaunched 2022; not yet concluded." [ref=e95]
+          - row "Myanmar UAE No FTA Standard Invoice No bilateral FTA. UAE MFN rates apply." [ref=e96]:
+            - cell "Myanmar" [ref=e97]
+            - cell "UAE" [ref=e98]
+            - cell "No FTA" [ref=e99]
+            - cell [ref=e100]
+            - cell "Standard Invoice" [ref=e101]
+            - cell "No bilateral FTA. UAE MFN rates apply." [ref=e102]
+          - 'row "UAE India CEPA India-UAE CEPA COO In force 1 May 2022. ROO: 35% value addition." [ref=e103]':
+            - cell "UAE" [ref=e104]
+            - cell "India" [ref=e105]
+            - cell "CEPA" [ref=e106]
+            - cell [ref=e107]
+            - cell "India-UAE CEPA COO" [ref=e108]
+            - 'cell "In force 1 May 2022. ROO: 35% value addition." [ref=e109]'
+          - row "India Philippines AIFTA Form AI AIFTA covers this lane." [ref=e110]:
+            - cell "India" [ref=e111]
+            - cell "Philippines" [ref=e112]
+            - cell "AIFTA" [ref=e113]
+            - cell [ref=e114]
+            - cell "Form AI" [ref=e115]
+            - cell "AIFTA covers this lane." [ref=e116]
+          - row "Germany Singapore EUSFTA EU-SG Statement on Origin EU-Singapore FTA in force 2019. Singapore 0% MFN on most lines anyway — agreement chiefly benefits EU exporters into SG for services/investment." [ref=e117]:
+            - cell "Germany" [ref=e118]
+            - cell "Singapore" [ref=e119]
+            - cell "EUSFTA" [ref=e120]
+            - cell [ref=e121]
+            - cell "EU-SG Statement on Origin" [ref=e122]
+            - cell "EU-Singapore FTA in force 2019. Singapore 0% MFN on most lines anyway — agreement chiefly benefits EU exporters into SG for services/investment." [ref=e123]
+          - row "Japan India IJCEPA IJCEPA COO In force since 2011. ~90% lines Normal Track. Rice, wheat, dairy excluded. Review IJCEPA schedule before use." [ref=e124]:
+            - cell "Japan" [ref=e125]
+            - cell "India" [ref=e126]
+            - cell "IJCEPA" [ref=e127]
+            - cell [ref=e128]
+            - cell "IJCEPA COO" [ref=e129]
+            - cell "In force since 2011. ~90% lines Normal Track. Rice, wheat, dairy excluded. Review IJCEPA schedule before use." [ref=e130]
+          - row "Mexico Japan CPTPP CPTPP / Mexico-Japan EPA COO Mexico-Japan EPA (2005) + CPTPP. Mexico has the widest FTA network globally." [ref=e131]:
+            - cell "Mexico" [ref=e132]
+            - cell "Japan" [ref=e133]
+            - cell "CPTPP" [ref=e134]
+            - cell [ref=e135]
+            - cell "CPTPP / Mexico-Japan EPA COO" [ref=e136]
+            - cell "Mexico-Japan EPA (2005) + CPTPP. Mexico has the widest FTA network globally." [ref=e137]
+          - row "Korea Thailand AKFTA Form AK / Form RCEP AKFTA + RCEP." [ref=e138]:
+            - cell "Korea" [ref=e139]
+            - cell "Thailand" [ref=e140]
+            - cell "AKFTA" [ref=e141]
+            - cell [ref=e142]
+            - cell "Form AK / Form RCEP" [ref=e143]
+            - cell "AKFTA + RCEP." [ref=e144]
+          - row "Australia Indonesia AANZFTA Form AANZ / IA-CEPA COO AANZFTA + bilateral Indonesia-Australia CEPA (2020) + RCEP. Compare." [ref=e145]:
+            - cell "Australia" [ref=e146]
+            - cell "Indonesia" [ref=e147]
+            - cell "AANZFTA" [ref=e148]
+            - cell [ref=e149]
+            - cell "Form AANZ / IA-CEPA COO" [ref=e150]
+            - cell "AANZFTA + bilateral Indonesia-Australia CEPA (2020) + RCEP. Compare." [ref=e151]
+          - 'row "UK India UK-India FTA Pending — use Standard Invoice until CBIC notification Signed May 2025; pending ratification as of Apr 2026. DO NOT claim preference until CBIC operational notification. Interim: WTO MFN." [ref=e152]':
+            - cell "UK" [ref=e153]
+            - cell "India" [ref=e154]
+            - cell "UK-India FTA" [ref=e155]
+            - cell [ref=e156]
+            - cell "Pending — use Standard Invoice until CBIC notification" [ref=e157]
+            - 'cell "Signed May 2025; pending ratification as of Apr 2026. DO NOT claim preference until CBIC operational notification. Interim: WTO MFN." [ref=e158]'
+          - row "Singapore Vietnam ATIGA Form D ATIGA 0%." [ref=e159]:
+            - cell "Singapore" [ref=e160]
+            - cell "Vietnam" [ref=e161]
+            - cell "ATIGA" [ref=e162]
+            - cell [ref=e163]
+            - cell "Form D" [ref=e164]
+            - cell "ATIGA 0%." [ref=e165]
+          - row "Hong Kong Singapore AHKFTA AHKFTA COO Singapore is also a free port — HK goods enter at 0% MFN anyway." [ref=e166]:
+            - cell "Hong Kong" [ref=e167]
+            - cell "Singapore" [ref=e168]
+            - cell "AHKFTA" [ref=e169]
+            - cell [ref=e170]
+            - cell "AHKFTA COO" [ref=e171]
+            - cell "Singapore is also a free port — HK goods enter at 0% MFN anyway." [ref=e172]
+          - row "Singapore Saudi Arabia SG-GCC FTA Verify with MTI Singapore Singapore-GCC FTA signed 2008 — status uncertain; verify before applying preferences." [ref=e173]:
+            - cell "Singapore" [ref=e174]
+            - cell "Saudi Arabia" [ref=e175]
+            - cell "SG-GCC FTA" [ref=e176]
+            - cell [ref=e177]
+            - cell "Verify with MTI Singapore" [ref=e178]
+            - cell "Singapore-GCC FTA signed 2008 — status uncertain; verify before applying preferences." [ref=e179]
+          - row "China Vietnam ACFTA Form E Also covered by RCEP." [ref=e180]:
+            - cell "China" [ref=e181]
+            - cell "Vietnam" [ref=e182]
+            - cell "ACFTA" [ref=e183]
+            - cell [ref=e184]
+            - cell "Form E" [ref=e185]
+            - cell "Also covered by RCEP." [ref=e186]
+          - row "Malaysia Singapore ATIGA Form D ATIGA 0%. Also RCEP. Singapore charges 0% MFN on most goods anyway." [ref=e187]:
+            - cell "Malaysia" [ref=e188]
+            - cell "Singapore" [ref=e189]
+            - cell "ATIGA" [ref=e190]
+            - cell [ref=e191]
+            - cell "Form D" [ref=e192]
+            - cell "ATIGA 0%. Also RCEP. Singapore charges 0% MFN on most goods anyway." [ref=e193]
+          - row "Hong Kong Saudi Arabia No FTA Standard Invoice No FTA. Saudi MFN rates apply (5% unified GCC external tariff on most goods)." [ref=e194]:
+            - cell "Hong Kong" [ref=e195]
+            - cell "Saudi Arabia" [ref=e196]
+            - cell "No FTA" [ref=e197]
+            - cell [ref=e198]
+            - cell "Standard Invoice" [ref=e199]
+            - cell "No FTA. Saudi MFN rates apply (5% unified GCC external tariff on most goods)." [ref=e200]
+          - row "Mexico USA USMCA USMCA Certification of Origin USMCA. IMMEX/maquiladora rules interact with origin — verify." [ref=e201]:
+            - cell "Mexico" [ref=e202]
+            - cell "USA" [ref=e203]
+            - cell "USMCA" [ref=e204]
+            - cell [ref=e205]
+            - cell "USMCA Certification of Origin" [ref=e206]
+            - cell "USMCA. IMMEX/maquiladora rules interact with origin — verify." [ref=e207]
+          - row "Germany Vietnam EVFTA EUR.1 or REX declaration EVFTA in force Aug 2020. Yarn-forward / double transformation for textiles." [ref=e208]:
+            - cell "Germany" [ref=e209]
+            - cell "Vietnam" [ref=e210]
+            - cell "EVFTA" [ref=e211]
+            - cell [ref=e212]
+            - cell "EUR.1 or REX declaration" [ref=e213]
+            - cell "EVFTA in force Aug 2020. Yarn-forward / double transformation for textiles." [ref=e214]
+          - row "USA Korea KORUS KORUS Certificate of Origin In force 2012; revised 2018. Self-certification." [ref=e215]:
+            - cell "USA" [ref=e216]
+            - cell "Korea" [ref=e217]
+            - cell "KORUS" [ref=e218]
+            - cell [ref=e219]
+            - cell "KORUS Certificate of Origin" [ref=e220]
+            - cell "In force 2012; revised 2018. Self-certification." [ref=e221]
+          - row "China Malaysia ACFTA Form E Also covered by RCEP — compare rates under both." [ref=e222]:
+            - cell "China" [ref=e223]
+            - cell "Malaysia" [ref=e224]
+            - cell "ACFTA" [ref=e225]
+            - cell [ref=e226]
+            - cell "Form E" [ref=e227]
+            - cell "Also covered by RCEP — compare rates under both." [ref=e228]
+          - row "Indonesia Singapore ATIGA Form D ATIGA 0%. Singapore is a free port." [ref=e229]:
+            - cell "Indonesia" [ref=e230]
+            - cell "Singapore" [ref=e231]
+            - cell "ATIGA" [ref=e232]
+            - cell [ref=e233]
+            - cell "Form D" [ref=e234]
+            - cell "ATIGA 0%. Singapore is a free port." [ref=e235]
+          - row "Indonesia Vietnam ATIGA Form D ATIGA 0%. Also RCEP." [ref=e236]:
+            - cell "Indonesia" [ref=e237]
+            - cell "Vietnam" [ref=e238]
+            - cell "ATIGA" [ref=e239]
+            - cell [ref=e240]
+            - cell "Form D" [ref=e241]
+            - cell "ATIGA 0%. Also RCEP." [ref=e242]
+          - row "Korea Malaysia AKFTA Form AK / Form RCEP AKFTA and RCEP overlap." [ref=e243]:
+            - cell "Korea" [ref=e244]
+            - cell "Malaysia" [ref=e245]
+            - cell "AKFTA" [ref=e246]
+            - cell [ref=e247]
+            - cell "Form AK / Form RCEP" [ref=e248]
+            - cell "AKFTA and RCEP overlap." [ref=e249]
+          - row "Germany Korea EU-Korea FTA Invoice Declaration / Statement on Origin EU-Korea FTA in force 2011. Approved-exporter self-certification." [ref=e250]:
+            - cell "Germany" [ref=e251]
+            - cell "Korea" [ref=e252]
+            - cell "EU-Korea FTA" [ref=e253]
+            - cell [ref=e254]
+            - cell "Invoice Declaration / Statement on Origin" [ref=e255]
+            - cell "EU-Korea FTA in force 2011. Approved-exporter self-certification." [ref=e256]
+          - 'row "Cambodia UAE UAE-CAMB CEPA Yes UAE-Cambodia CEPA COO (FZ rules) Free Zone destination: verify UAE FZ customs procedures. FZ imports may have different duty treatment within UAE FZ vs. mainland." [ref=e257]':
+            - cell "Cambodia" [ref=e258]
+            - cell "UAE" [ref=e259]
+            - cell "UAE-CAMB CEPA" [ref=e260]
+            - cell "Yes" [ref=e261]
+            - cell "UAE-Cambodia CEPA COO (FZ rules)" [ref=e262]
+            - 'cell "Free Zone destination: verify UAE FZ customs procedures. FZ imports may have different duty treatment within UAE FZ vs. mainland." [ref=e263]'
+          - row "Japan Vietnam AJCEP Form AJ / Form RCEP AJCEP, RCEP, and bilateral Japan-Vietnam EPA (JVEPA 2009) available. CPTPP also covers both." [ref=e264]:
+            - cell "Japan" [ref=e265]
+            - cell "Vietnam" [ref=e266]
+            - cell "AJCEP" [ref=e267]
+            - cell [ref=e268]
+            - cell "Form AJ / Form RCEP" [ref=e269]
+            - cell "AJCEP, RCEP, and bilateral Japan-Vietnam EPA (JVEPA 2009) available. CPTPP also covers both." [ref=e270]
+          - row "Korea Indonesia AKFTA Form AK / Form RCEP AKFTA and RCEP overlap. Compare rates per line." [ref=e271]:
+            - cell "Korea" [ref=e272]
+            - cell "Indonesia" [ref=e273]
+            - cell "AKFTA" [ref=e274]
+            - cell [ref=e275]
+            - cell "Form AK / Form RCEP" [ref=e276]
+            - cell "AKFTA and RCEP overlap. Compare rates per line." [ref=e277]
+          - row "Germany India EU-India FTA (BTIA) Standard Invoice No EU-India FTA in force. BTIA negotiations relaunched 2022. WTO MFN applies." [ref=e278]:
+            - cell "Germany" [ref=e279]
+            - cell "India" [ref=e280]
+            - cell "EU-India FTA (BTIA)" [ref=e281]
+            - cell [ref=e282]
+            - cell "Standard Invoice" [ref=e283]
+            - cell "No EU-India FTA in force. BTIA negotiations relaunched 2022. WTO MFN applies." [ref=e284]
+          - row "Italy India EU-India FTA (BTIA) Standard Invoice EU member — no EU-India FTA. MFN applies." [ref=e285]:
+            - cell "Italy" [ref=e286]
+            - cell "India" [ref=e287]
+            - cell "EU-India FTA (BTIA)" [ref=e288]
+            - cell [ref=e289]
+            - cell "Standard Invoice" [ref=e290]
+            - cell "EU member — no EU-India FTA. MFN applies." [ref=e291]
+          - row "Mexico India No FTA Standard Invoice No FTA; MFN applies." [ref=e292]:
+            - cell "Mexico" [ref=e293]
+            - cell "India" [ref=e294]
+            - cell "No FTA" [ref=e295]
+            - cell [ref=e296]
+            - cell "Standard Invoice" [ref=e297]
+            - cell "No FTA; MFN applies." [ref=e298]
+          - row "India China No FTA Standard Invoice No bilateral FTA; India chose not to join RCEP. WTO MFN rates apply." [ref=e299]:
+            - cell "India" [ref=e300]
+            - cell "China" [ref=e301]
+            - cell "No FTA" [ref=e302]
+            - cell [ref=e303]
+            - cell "Standard Invoice" [ref=e304]
+            - cell "No bilateral FTA; India chose not to join RCEP. WTO MFN rates apply." [ref=e305]
+          - row "Japan Indonesia AJCEP Form AJ / Form RCEP AJCEP (2008) and RCEP (2023 for Indonesia) both available. Also Japan-Indonesia bilateral EPA (IJEPA)." [ref=e306]:
+            - cell "Japan" [ref=e307]
+            - cell "Indonesia" [ref=e308]
+            - cell "AJCEP" [ref=e309]
+            - cell [ref=e310]
+            - cell "Form AJ / Form RCEP" [ref=e311]
+            - cell "AJCEP (2008) and RCEP (2023 for Indonesia) both available. Also Japan-Indonesia bilateral EPA (IJEPA)." [ref=e312]
+          - row "Netherlands India EU-India FTA (BTIA) Standard Invoice EU member — no EU-India FTA. MFN applies." [ref=e313]:
+            - cell "Netherlands" [ref=e314]
+            - cell "India" [ref=e315]
+            - cell "EU-India FTA (BTIA)" [ref=e316]
+            - cell [ref=e317]
+            - cell "Standard Invoice" [ref=e318]
+            - cell "EU member — no EU-India FTA. MFN applies." [ref=e319]
+          - row "Singapore Philippines ATIGA Form D ATIGA 0%." [ref=e320]:
+            - cell "Singapore" [ref=e321]
+            - cell "Philippines" [ref=e322]
+            - cell "ATIGA" [ref=e323]
+            - cell [ref=e324]
+            - cell "Form D" [ref=e325]
+            - cell "ATIGA 0%." [ref=e326]
+          - row "Canada India No FTA Standard Invoice Canada-India EPA negotiations paused 2023 due to diplomatic tensions. MFN applies." [ref=e327]:
+            - cell "Canada" [ref=e328]
+            - cell "India" [ref=e329]
+            - cell "No FTA" [ref=e330]
+            - cell [ref=e331]
+            - cell "Standard Invoice" [ref=e332]
+            - cell "Canada-India EPA negotiations paused 2023 due to diplomatic tensions. MFN applies." [ref=e333]
+          - row "Germany Japan EU-Japan EPA Statement on Origin (REX) EU-Japan EPA in force 1 Feb 2019. REX registration required." [ref=e334]:
+            - cell "Germany" [ref=e335]
+            - cell "Japan" [ref=e336]
+            - cell "EU-Japan EPA" [ref=e337]
+            - cell [ref=e338]
+            - cell "Statement on Origin (REX)" [ref=e339]
+            - cell "EU-Japan EPA in force 1 Feb 2019. REX registration required." [ref=e340]
+          - row "Australia UAE No FTA Standard Invoice Australia-UAE CEPA under negotiation (announced 2023). Not yet in force." [ref=e341]:
+            - cell "Australia" [ref=e342]
+            - cell "UAE" [ref=e343]
+            - cell "No FTA" [ref=e344]
+            - cell [ref=e345]
+            - cell "Standard Invoice" [ref=e346]
+            - cell "Australia-UAE CEPA under negotiation (announced 2023). Not yet in force." [ref=e347]
+          - row "India Thailand AIFTA Form AI AIFTA covers this lane." [ref=e348]:
+            - cell "India" [ref=e349]
+            - cell "Thailand" [ref=e350]
+            - cell "AIFTA" [ref=e351]
+            - cell [ref=e352]
+            - cell "Form AI" [ref=e353]
+            - cell "AIFTA covers this lane." [ref=e354]
+          - row "UK Japan No FTA UK-Japan CEPA Origin Declaration UK-Japan CEPA in force 1 Jan 2021 (post-Brexit replacement for EU-Japan EPA). UK is also CPTPP member since Dec 2024." [ref=e355]:
+            - cell "UK" [ref=e356]
+            - cell "Japan" [ref=e357]
+            - cell "No FTA" [ref=e358]
+            - cell [ref=e359]
+            - cell "UK-Japan CEPA Origin Declaration" [ref=e360]
+            - cell "UK-Japan CEPA in force 1 Jan 2021 (post-Brexit replacement for EU-Japan EPA). UK is also CPTPP member since Dec 2024." [ref=e361]
+          - row "Hong Kong Indonesia AHKFTA AHKFTA COO In force Jun 2019." [ref=e362]:
+            - cell "Hong Kong" [ref=e363]
+            - cell "Indonesia" [ref=e364]
+            - cell "AHKFTA" [ref=e365]
+            - cell [ref=e366]
+            - cell "AHKFTA COO" [ref=e367]
+            - cell "In force Jun 2019." [ref=e368]
+          - row "Australia Malaysia AANZFTA Form AANZ / MAFTA COO AANZFTA + bilateral Malaysia-Australia FTA (MAFTA 2013) + RCEP." [ref=e369]:
+            - cell "Australia" [ref=e370]
+            - cell "Malaysia" [ref=e371]
+            - cell "AANZFTA" [ref=e372]
+            - cell [ref=e373]
+            - cell "Form AANZ / MAFTA COO" [ref=e374]
+            - cell "AANZFTA + bilateral Malaysia-Australia FTA (MAFTA 2013) + RCEP." [ref=e375]
+          - row "USA Singapore No FTA USSFTA Certification US-Singapore FTA (2004) covers — SG is 0% MFN anyway." [ref=e376]:
+            - cell "USA" [ref=e377]
+            - cell "Singapore" [ref=e378]
+            - cell "No FTA" [ref=e379]
+            - cell [ref=e380]
+            - cell "USSFTA Certification" [ref=e381]
+            - cell "US-Singapore FTA (2004) covers — SG is 0% MFN anyway." [ref=e382]
+          - row "Vietnam Singapore ATIGA Form D ATIGA 0%. Singapore free port." [ref=e383]:
+            - cell "Vietnam" [ref=e384]
+            - cell "Singapore" [ref=e385]
+            - cell "ATIGA" [ref=e386]
+            - cell [ref=e387]
+            - cell "Form D" [ref=e388]
+            - cell "ATIGA 0%. Singapore free port." [ref=e389]
+          - row "Indonesia India AIFTA Form AI RVC 35%. Indonesia's Form AI issued by Ministry of Trade." [ref=e390]:
+            - cell "Indonesia" [ref=e391]
+            - cell "India" [ref=e392]
+            - cell "AIFTA" [ref=e393]
+            - cell [ref=e394]
+            - cell "Form AI" [ref=e395]
+            - cell "RVC 35%. Indonesia's Form AI issued by Ministry of Trade." [ref=e396]
+          - row "USA India No FTA Standard Invoice No bilateral FTA. India's GSP benefits for US were suspended in 2019. WTO MFN rates apply." [ref=e397]:
+            - cell "USA" [ref=e398]
+            - cell "India" [ref=e399]
+            - cell "No FTA" [ref=e400]
+            - cell [ref=e401]
+            - cell "Standard Invoice" [ref=e402]
+            - cell "No bilateral FTA. India's GSP benefits for US were suspended in 2019. WTO MFN rates apply." [ref=e403]
+          - row "China Indonesia ACFTA Form E Also covered by RCEP." [ref=e404]:
+            - cell "China" [ref=e405]
+            - cell "Indonesia" [ref=e406]
+            - cell "ACFTA" [ref=e407]
+            - cell [ref=e408]
+            - cell "Form E" [ref=e409]
+            - cell "Also covered by RCEP." [ref=e410]
+          - row "UK Vietnam CPTPP UKVFTA COO / CPTPP Certification UK-Vietnam FTA (2021) rolled over from EU-Vietnam. CPTPP also applies." [ref=e411]:
+            - cell "UK" [ref=e412]
+            - cell "Vietnam" [ref=e413]
+            - cell "CPTPP" [ref=e414]
+            - cell [ref=e415]
+            - cell "UKVFTA COO / CPTPP Certification" [ref=e416]
+            - cell "UK-Vietnam FTA (2021) rolled over from EU-Vietnam. CPTPP also applies." [ref=e417]
+          - row "China Singapore ACFTA Form E China-Singapore FTA (CSFTA) also provides bilateral preferences — compare all three (ACFTA/CSFTA/RCEP)." [ref=e418]:
+            - cell "China" [ref=e419]
+            - cell "Singapore" [ref=e420]
+            - cell "ACFTA" [ref=e421]
+            - cell [ref=e422]
+            - cell "Form E" [ref=e423]
+            - cell "China-Singapore FTA (CSFTA) also provides bilateral preferences — compare all three (ACFTA/CSFTA/RCEP)." [ref=e424]
+          - row "Bangladesh UAE No FTA Standard Invoice No FTA in force. Bangladesh may qualify for UAE LDC concessions; verify with UAE customs." [ref=e425]:
+            - cell "Bangladesh" [ref=e426]
+            - cell "UAE" [ref=e427]
+            - cell "No FTA" [ref=e428]
+            - cell [ref=e429]
+            - cell "Standard Invoice" [ref=e430]
+            - cell "No FTA in force. Bangladesh may qualify for UAE LDC concessions; verify with UAE customs." [ref=e431]
+          - row "India Singapore CECA Form AI / India-SG COO Both AIFTA and bilateral CECA available." [ref=e432]:
+            - cell "India" [ref=e433]
+            - cell "Singapore" [ref=e434]
+            - cell "CECA" [ref=e435]
+            - cell [ref=e436]
+            - cell "Form AI / India-SG COO" [ref=e437]
+            - cell "Both AIFTA and bilateral CECA available." [ref=e438]
+          - row "Indonesia Saudi Arabia No FTA Standard Invoice No bilateral FTA. Saudi MFN (5%) applies. ASEAN-GCC FTA under negotiation." [ref=e439]:
+            - cell "Indonesia" [ref=e440]
+            - cell "Saudi Arabia" [ref=e441]
+            - cell "No FTA" [ref=e442]
+            - cell [ref=e443]
+            - cell "Standard Invoice" [ref=e444]
+            - cell "No bilateral FTA. Saudi MFN (5%) applies. ASEAN-GCC FTA under negotiation." [ref=e445]
+          - row "Hong Kong UAE No FTA Standard Invoice No bilateral FTA currently in force." [ref=e446]:
+            - cell "Hong Kong" [ref=e447]
+            - cell "UAE" [ref=e448]
+            - cell "No FTA" [ref=e449]
+            - cell [ref=e450]
+            - cell "Standard Invoice" [ref=e451]
+            - cell "No bilateral FTA currently in force." [ref=e452]
+          - row "Korea Vietnam AKFTA Form AK / VKFTA COO Korea-Vietnam bilateral VKFTA (2015) often offers deeper concessions than AKFTA. RCEP also applies." [ref=e453]:
+            - cell "Korea" [ref=e454]
+            - cell "Vietnam" [ref=e455]
+            - cell "AKFTA" [ref=e456]
+            - cell [ref=e457]
+            - cell "Form AK / VKFTA COO" [ref=e458]
+            - cell "Korea-Vietnam bilateral VKFTA (2015) often offers deeper concessions than AKFTA. RCEP also applies." [ref=e459]
+          - row "India Malaysia MICECA MICECA COO / Form AI Both MICECA (bilateral) and AIFTA available — choose whichever gives better rate." [ref=e460]:
+            - cell "India" [ref=e461]
+            - cell "Malaysia" [ref=e462]
+            - cell "MICECA" [ref=e463]
+            - cell [ref=e464]
+            - cell "MICECA COO / Form AI" [ref=e465]
+            - cell "Both MICECA (bilateral) and AIFTA available — choose whichever gives better rate." [ref=e466]
+          - row "Japan Malaysia AJCEP Form AJ / Form RCEP AJCEP, RCEP, and bilateral Japan-Malaysia EPA (JMEPA 2006) available. Compare per HS line." [ref=e467]:
+            - cell "Japan" [ref=e468]
+            - cell "Malaysia" [ref=e469]
+            - cell "AJCEP" [ref=e470]
+            - cell [ref=e471]
+            - cell "Form AJ / Form RCEP" [ref=e472]
+            - cell "AJCEP, RCEP, and bilateral Japan-Malaysia EPA (JMEPA 2006) available. Compare per HS line." [ref=e473]
+          - 'row "UAE Saudi Arabia GCC Common Market GCC COO (national origin) GCC Common Market — 0% for GCC-origin goods. Third-country goods: 5% external tariff." [ref=e474]':
+            - cell "UAE" [ref=e475]
+            - cell "Saudi Arabia" [ref=e476]
+            - cell "GCC Common Market" [ref=e477]
+            - cell [ref=e478]
+            - cell "GCC COO (national origin)" [ref=e479]
+            - 'cell "GCC Common Market — 0% for GCC-origin goods. Third-country goods: 5% external tariff." [ref=e480]'
+          - row "China Thailand ACFTA Form E Early Harvest Programme (EHP) provides 0% on agri Chapter 01–08 since 2004." [ref=e481]:
+            - cell "China" [ref=e482]
+            - cell "Thailand" [ref=e483]
+            - cell "ACFTA" [ref=e484]
+            - cell [ref=e485]
+            - cell "Form E" [ref=e486]
+            - cell "Early Harvest Programme (EHP) provides 0% on agri Chapter 01–08 since 2004." [ref=e487]
+          - row "Korea Singapore AKFTA Form AK / KSFTA COO Korea-Singapore bilateral KSFTA (2006), AKFTA, RCEP all apply. Singapore 0% MFN anyway." [ref=e488]:
+            - cell "Korea" [ref=e489]
+            - cell "Singapore" [ref=e490]
+            - cell "AKFTA" [ref=e491]
+            - cell [ref=e492]
+            - cell "Form AK / KSFTA COO" [ref=e493]
+            - cell "Korea-Singapore bilateral KSFTA (2006), AKFTA, RCEP all apply. Singapore 0% MFN anyway." [ref=e494]
+          - row "Germany UK EU-UK TCA Statement on Origin (exporter) EU-UK TCA — 0% tariff/quota for qualifying goods. Non-qualifying = MFN. Bilateral cumulation only." [ref=e495]:
+            - cell "Germany" [ref=e496]
+            - cell "UK" [ref=e497]
+            - cell "EU-UK TCA" [ref=e498]
+            - cell [ref=e499]
+            - cell "Statement on Origin (exporter)" [ref=e500]
+            - cell "EU-UK TCA — 0% tariff/quota for qualifying goods. Non-qualifying = MFN. Bilateral cumulation only." [ref=e501]
+          - row "Poland India EU-India FTA (BTIA) Standard Invoice / EUR.1 (when FTA concluded) EU member state — no EU-India FTA in force. WTO MFN rates apply. Monitor BTIA negotiations." [ref=e502]:
+            - cell "Poland" [ref=e503]
+            - cell "India" [ref=e504]
+            - cell "EU-India FTA (BTIA)" [ref=e505]
+            - cell [ref=e506]
+            - cell "Standard Invoice / EUR.1 (when FTA concluded)" [ref=e507]
+            - cell "EU member state — no EU-India FTA in force. WTO MFN rates apply. Monitor BTIA negotiations." [ref=e508]
+          - row "Norway India EFTA-India TEPA EFTA-India TEPA Origin Declaration Same as Switzerland lane. EFTA member." [ref=e509]:
+            - cell "Norway" [ref=e510]
+            - cell "India" [ref=e511]
+            - cell "EFTA-India TEPA" [ref=e512]
+            - cell [ref=e513]
+            - cell "EFTA-India TEPA Origin Declaration" [ref=e514]
+            - cell "Same as Switzerland lane. EFTA member." [ref=e515]
+          - row "USA Mexico USMCA USMCA Certification of Origin In force 1 July 2020. Six-year review due 2026." [ref=e516]:
+            - cell "USA" [ref=e517]
+            - cell "Mexico" [ref=e518]
+            - cell "USMCA" [ref=e519]
+            - cell [ref=e520]
+            - cell "USMCA Certification of Origin" [ref=e521]
+            - cell "In force 1 July 2020. Six-year review due 2026." [ref=e522]
+          - 'row "Indonesia India AIFTA Yes Form AI (FZ rules apply) Free Zone shipments: verify that goods are substantially transformed in FZ to qualify as Indonesia-origin under AIFTA ROO." [ref=e523]':
+            - cell "Indonesia" [ref=e524]
+            - cell "India" [ref=e525]
+            - cell "AIFTA" [ref=e526]
+            - cell "Yes" [ref=e527]
+            - cell "Form AI (FZ rules apply)" [ref=e528]
+            - 'cell "Free Zone shipments: verify that goods are substantially transformed in FZ to qualify as Indonesia-origin under AIFTA ROO." [ref=e529]'
+          - row "Australia Singapore AANZFTA Form AANZ / SAFTA COO AANZFTA + bilateral Singapore-Australia FTA (SAFTA 2003) + CPTPP + RCEP." [ref=e530]:
+            - cell "Australia" [ref=e531]
+            - cell "Singapore" [ref=e532]
+            - cell "AANZFTA" [ref=e533]
+            - cell [ref=e534]
+            - cell "Form AANZ / SAFTA COO" [ref=e535]
+            - cell "AANZFTA + bilateral Singapore-Australia FTA (SAFTA 2003) + CPTPP + RCEP." [ref=e536]
+          - row "USA UAE No FTA Standard Invoice No FTA in force. US-UAE FTA negotiations were previously paused." [ref=e537]:
+            - cell "USA" [ref=e538]
+            - cell "UAE" [ref=e539]
+            - cell "No FTA" [ref=e540]
+            - cell [ref=e541]
+            - cell "Standard Invoice" [ref=e542]
+            - cell "No FTA in force. US-UAE FTA negotiations were previously paused." [ref=e543]
+          - row "Japan Philippines AJCEP Form AJ / Form RCEP AJCEP, RCEP (2023), Japan-Philippines EPA (JPEPA 2008) all available." [ref=e544]:
+            - cell "Japan" [ref=e545]
+            - cell "Philippines" [ref=e546]
+            - cell "AJCEP" [ref=e547]
+            - cell [ref=e548]
+            - cell "Form AJ / Form RCEP" [ref=e549]
+            - cell "AJCEP, RCEP (2023), Japan-Philippines EPA (JPEPA 2008) all available." [ref=e550]
+          - row "Malaysia Philippines ATIGA Form D ATIGA 0%." [ref=e551]:
+            - cell "Malaysia" [ref=e552]
+            - cell "Philippines" [ref=e553]
+            - cell "ATIGA" [ref=e554]
+            - cell [ref=e555]
+            - cell "Form D" [ref=e556]
+            - cell "ATIGA 0%." [ref=e557]
+          - 'row "Myanmar India AIFTA Yes Form AI (FZ rules apply) SEZ/FZ origin goods: verify Myanmar origin under AIFTA ROO. Myanmar is LDC — check DFQF access under India''s LDC scheme." [ref=e558]':
+            - cell "Myanmar" [ref=e559]
+            - cell "India" [ref=e560]
+            - cell "AIFTA" [ref=e561]
+            - cell "Yes" [ref=e562]
+            - cell "Form AI (FZ rules apply)" [ref=e563]
+            - 'cell "SEZ/FZ origin goods: verify Myanmar origin under AIFTA ROO. Myanmar is LDC — check DFQF access under India''s LDC scheme." [ref=e564]'
+          - row "Singapore Thailand ATIGA Form D ATIGA 0%." [ref=e565]:
+            - cell "Singapore" [ref=e566]
+            - cell "Thailand" [ref=e567]
+            - cell "ATIGA" [ref=e568]
+            - cell [ref=e569]
+            - cell "Form D" [ref=e570]
+            - cell "ATIGA 0%." [ref=e571]
+          - row "Japan Singapore AJCEP Form AJ / Form RCEP AJCEP, RCEP, JSEPA (Japan-Singapore EPA 2002), CPTPP all cover — Singapore free port so 0% MFN on most goods." [ref=e572]:
+            - cell "Japan" [ref=e573]
+            - cell "Singapore" [ref=e574]
+            - cell "AJCEP" [ref=e575]
+            - cell [ref=e576]
+            - cell "Form AJ / Form RCEP" [ref=e577]
+            - cell "AJCEP, RCEP, JSEPA (Japan-Singapore EPA 2002), CPTPP all cover — Singapore free port so 0% MFN on most goods." [ref=e578]
+          - 'row "Canada USA USMCA USMCA Certification of Origin USMCA; self-certification. Autos: 75% RVC + LVC." [ref=e579]':
+            - cell "Canada" [ref=e580]
+            - cell "USA" [ref=e581]
+            - cell "USMCA" [ref=e582]
+            - cell [ref=e583]
+            - cell "USMCA Certification of Origin" [ref=e584]
+            - 'cell "USMCA; self-certification. Autos: 75% RVC + LVC." [ref=e585]'
+          - row "Japan Thailand AJCEP Form AJ / Form RCEP AJCEP, RCEP, Japan-Thailand EPA (JTEPA 2007). CPTPP not applicable (Thailand not party)." [ref=e586]:
+            - cell "Japan" [ref=e587]
+            - cell "Thailand" [ref=e588]
+            - cell "AJCEP" [ref=e589]
+            - cell [ref=e590]
+            - cell "Form AJ / Form RCEP" [ref=e591]
+            - cell "AJCEP, RCEP, Japan-Thailand EPA (JTEPA 2007). CPTPP not applicable (Thailand not party)." [ref=e592]
+          - row "Singapore Malaysia ATIGA Form D ATIGA 0%." [ref=e593]:
+            - cell "Singapore" [ref=e594]
+            - cell "Malaysia" [ref=e595]
+            - cell "ATIGA" [ref=e596]
+            - cell [ref=e597]
+            - cell "Form D" [ref=e598]
+            - cell "ATIGA 0%." [ref=e599]
+          - row "China Philippines ACFTA Form E Also covered by RCEP." [ref=e600]:
+            - cell "China" [ref=e601]
+            - cell "Philippines" [ref=e602]
+            - cell "ACFTA" [ref=e603]
+            - cell [ref=e604]
+            - cell "Form E" [ref=e605]
+            - cell "Also covered by RCEP." [ref=e606]
+          - 'row "Australia India IndAus ECTA IndAus ECTA COO In force 29 Dec 2022. CTSH + 35% QVC. Major flows: wool, coal, wine, lentils." [ref=e607]':
+            - cell "Australia" [ref=e608]
+            - cell "India" [ref=e609]
+            - cell "IndAus ECTA" [ref=e610]
+            - cell [ref=e611]
+            - cell "IndAus ECTA COO" [ref=e612]
+            - 'cell "In force 29 Dec 2022. CTSH + 35% QVC. Major flows: wool, coal, wine, lentils." [ref=e613]'
+          - row "Hong Kong Malaysia AHKFTA AHKFTA COO In force Jun 2019. HK origin goods enter Malaysia at preferential rates." [ref=e614]:
+            - cell "Hong Kong" [ref=e615]
+            - cell "Malaysia" [ref=e616]
+            - cell "AHKFTA" [ref=e617]
+            - cell [ref=e618]
+            - cell "AHKFTA COO" [ref=e619]
+            - cell "In force Jun 2019. HK origin goods enter Malaysia at preferential rates." [ref=e620]
+          - row "Hong Kong Thailand AHKFTA AHKFTA COO In force Jun 2019." [ref=e621]:
+            - cell "Hong Kong" [ref=e622]
+            - cell "Thailand" [ref=e623]
+            - cell "AHKFTA" [ref=e624]
+            - cell [ref=e625]
+            - cell "AHKFTA COO" [ref=e626]
+            - cell "In force Jun 2019." [ref=e627]
+          - row "China Qatar CN-GCC FTA CN-GCC CEPA Form (pending) Signed Jan 2024 — verify ratification status." [ref=e628]:
+            - cell "China" [ref=e629]
+            - cell "Qatar" [ref=e630]
+            - cell "CN-GCC FTA" [ref=e631]
+            - cell [ref=e632]
+            - cell "CN-GCC CEPA Form (pending)" [ref=e633]
+            - cell "Signed Jan 2024 — verify ratification status." [ref=e634]
+          - row "USA Canada USMCA USMCA Certification of Origin In force 1 July 2020. Self-certification; retain records 5 years. Strict auto RoO (75% RVC + LVC)." [ref=e635]:
+            - cell "USA" [ref=e636]
+            - cell "Canada" [ref=e637]
+            - cell "USMCA" [ref=e638]
+            - cell [ref=e639]
+            - cell "USMCA Certification of Origin" [ref=e640]
+            - cell "In force 1 July 2020. Self-certification; retain records 5 years. Strict auto RoO (75% RVC + LVC)." [ref=e641]
+          - row "Singapore UAE No FTA Standard Invoice Singapore-GCC FTA signed 2008 but not yet in force. MFN rates apply." [ref=e642]:
+            - cell "Singapore" [ref=e643]
+            - cell "UAE" [ref=e644]
+            - cell "No FTA" [ref=e645]
+            - cell [ref=e646]
+            - cell "Standard Invoice" [ref=e647]
+            - cell "Singapore-GCC FTA signed 2008 but not yet in force. MFN rates apply." [ref=e648]
+          - row "Malaysia Indonesia ATIGA Form D ATIGA 0%." [ref=e649]:
+            - cell "Malaysia" [ref=e650]
+            - cell "Indonesia" [ref=e651]
+            - cell "ATIGA" [ref=e652]
+            - cell [ref=e653]
+            - cell "Form D" [ref=e654]
+            - cell "ATIGA 0%." [ref=e655]
+          - 'row "Indonesia UAE UAE-INDO CEPA UAE-Indonesia CEPA COO In force Sep 2023. Key products: palm oil, minerals, food." [ref=e656]':
+            - cell "Indonesia" [ref=e657]
+            - cell "UAE" [ref=e658]
+            - cell "UAE-INDO CEPA" [ref=e659]
+            - cell [ref=e660]
+            - cell "UAE-Indonesia CEPA COO" [ref=e661]
+            - 'cell "In force Sep 2023. Key products: palm oil, minerals, food." [ref=e662]'
+          - row "Germany UAE EU-UAE FTA Standard Invoice No EU-UAE FTA in force. WTO MFN applies." [ref=e663]:
+            - cell "Germany" [ref=e664]
+            - cell "UAE" [ref=e665]
+            - cell "EU-UAE FTA" [ref=e666]
+            - cell [ref=e667]
+            - cell "Standard Invoice" [ref=e668]
+            - cell "No EU-UAE FTA in force. WTO MFN applies." [ref=e669]
+          - row "Malaysia Vietnam ATIGA Form D ATIGA 0%." [ref=e670]:
+            - cell "Malaysia" [ref=e671]
+            - cell "Vietnam" [ref=e672]
+            - cell "ATIGA" [ref=e673]
+            - cell [ref=e674]
+            - cell "Form D" [ref=e675]
+            - cell "ATIGA 0%." [ref=e676]
+          - row "UK Singapore No FTA UK-Singapore FTA Origin Declaration / CPTPP Certification UK-Singapore FTA (2021) + UK is CPTPP member (2024)." [ref=e677]:
+            - cell "UK" [ref=e678]
+            - cell "Singapore" [ref=e679]
+            - cell "No FTA" [ref=e680]
+            - cell [ref=e681]
+            - cell "UK-Singapore FTA Origin Declaration / CPTPP Certification" [ref=e682]
+            - cell "UK-Singapore FTA (2021) + UK is CPTPP member (2024)." [ref=e683]
+          - row "China Saudi Arabia CN-GCC FTA CN-GCC CEPA Form (pending) Signed Jan 2024 — verify ratification status." [ref=e684]:
+            - cell "China" [ref=e685]
+            - cell "Saudi Arabia" [ref=e686]
+            - cell "CN-GCC FTA" [ref=e687]
+            - cell [ref=e688]
+            - cell "CN-GCC CEPA Form (pending)" [ref=e689]
+            - cell "Signed Jan 2024 — verify ratification status." [ref=e690]
+          - row "Belgium Hong Kong No FTA EUR.1 / Invoice Declaration EU member state. No EU-HK FTA. HK is a free port — 0% on most imports anyway." [ref=e691]:
+            - cell "Belgium" [ref=e692]
+            - cell "Hong Kong" [ref=e693]
+            - cell "No FTA" [ref=e694]
+            - cell [ref=e695]
+            - cell "EUR.1 / Invoice Declaration" [ref=e696]
+            - cell "EU member state. No EU-HK FTA. HK is a free port — 0% on most imports anyway." [ref=e697]
+          - row "Indonesia Philippines ATIGA Form D ATIGA 0%." [ref=e698]:
+            - cell "Indonesia" [ref=e699]
+            - cell "Philippines" [ref=e700]
+            - cell "ATIGA" [ref=e701]
+            - cell [ref=e702]
+            - cell "Form D" [ref=e703]
+            - cell "ATIGA 0%." [ref=e704]
+          - row "Canada Vietnam CPTPP CPTPP Certification CPTPP." [ref=e705]:
+            - cell "Canada" [ref=e706]
+            - cell "Vietnam" [ref=e707]
+            - cell "CPTPP" [ref=e708]
+            - cell [ref=e709]
+            - cell "CPTPP Certification" [ref=e710]
+            - cell "CPTPP." [ref=e711]
+          - row "Hong Kong Philippines AHKFTA AHKFTA COO In force Jun 2019." [ref=e712]:
+            - cell "Hong Kong" [ref=e713]
+            - cell "Philippines" [ref=e714]
+            - cell "AHKFTA" [ref=e715]
+            - cell [ref=e716]
+            - cell "AHKFTA COO" [ref=e717]
+            - cell "In force Jun 2019." [ref=e718]
+          - row "Canada Singapore CPTPP CPTPP Certification CPTPP." [ref=e719]:
+            - cell "Canada" [ref=e720]
+            - cell "Singapore" [ref=e721]
+            - cell "CPTPP" [ref=e722]
+            - cell [ref=e723]
+            - cell "CPTPP Certification" [ref=e724]
+            - cell "CPTPP." [ref=e725]
+          - row "Indonesia Thailand ATIGA Form D ATIGA 0%." [ref=e726]:
+            - cell "Indonesia" [ref=e727]
+            - cell "Thailand" [ref=e728]
+            - cell "ATIGA" [ref=e729]
+            - cell [ref=e730]
+            - cell "Form D" [ref=e731]
+            - cell "ATIGA 0%." [ref=e732]
+          - row "Indonesia Malaysia ATIGA Form D ATIGA 0%. Also RCEP available." [ref=e733]:
+            - cell "Indonesia" [ref=e734]
+            - cell "Malaysia" [ref=e735]
+            - cell "ATIGA" [ref=e736]
+            - cell [ref=e737]
+            - cell "Form D" [ref=e738]
+            - cell "ATIGA 0%. Also RCEP available." [ref=e739]
+          - row "Korea India IKCEPA IKCEPA COO In force 2010. Upgrade negotiations slow. Check DGFT operational notifications for current line-level treatment." [ref=e740]:
+            - cell "Korea" [ref=e741]
+            - cell "India" [ref=e742]
+            - cell "IKCEPA" [ref=e743]
+            - cell [ref=e744]
+            - cell "IKCEPA COO" [ref=e745]
+            - cell "In force 2010. Upgrade negotiations slow. Check DGFT operational notifications for current line-level treatment." [ref=e746]
+          - row "USA Japan No FTA Standard Invoice US-Japan Trade Agreement (2020) limited to digital/agri, NOT a comprehensive FTA." [ref=e747]:
+            - cell "USA" [ref=e748]
+            - cell "Japan" [ref=e749]
+            - cell "No FTA" [ref=e750]
+            - cell [ref=e751]
+            - cell "Standard Invoice" [ref=e752]
+            - cell "US-Japan Trade Agreement (2020) limited to digital/agri, NOT a comprehensive FTA." [ref=e753]
+          - row "Canada Mexico USMCA USMCA Certification of Origin USMCA applies." [ref=e754]:
+            - cell "Canada" [ref=e755]
+            - cell "Mexico" [ref=e756]
+            - cell "USMCA" [ref=e757]
+            - cell [ref=e758]
+            - cell "USMCA Certification of Origin" [ref=e759]
+            - cell "USMCA applies." [ref=e760]
+          - row "India Indonesia AIFTA Form AI AIFTA covers this lane. RVC 35%." [ref=e761]:
+            - cell "India" [ref=e762]
+            - cell "Indonesia" [ref=e763]
+            - cell "AIFTA" [ref=e764]
+            - cell [ref=e765]
+            - cell "Form AI" [ref=e766]
+            - cell "AIFTA covers this lane. RVC 35%." [ref=e767]
+          - row "Mauritius India CECPA CECPA COO In force 1 Apr 2021. 310 Indian tariff lines with preference. CTSH + 40% VA." [ref=e768]:
+            - cell "Mauritius" [ref=e769]
+            - cell "India" [ref=e770]
+            - cell "CECPA" [ref=e771]
+            - cell [ref=e772]
+            - cell "CECPA COO" [ref=e773]
+            - cell "In force 1 Apr 2021. 310 Indian tariff lines with preference. CTSH + 40% VA." [ref=e774]
+          - row "Japan USA No FTA Standard Invoice US-Japan Trade Agreement (2020) covers limited agri/digital trade, NOT a full FTA. Autos covered separately under Section 232 arrangements." [ref=e775]:
+            - cell "Japan" [ref=e776]
+            - cell "USA" [ref=e777]
+            - cell "No FTA" [ref=e778]
+            - cell [ref=e779]
+            - cell "Standard Invoice" [ref=e780]
+            - cell "US-Japan Trade Agreement (2020) covers limited agri/digital trade, NOT a full FTA. Autos covered separately under Section 232 arrangements." [ref=e781]
+          - row "Belgium Vietnam EVFTA EUR.1 or REX declaration EVFTA active since Aug 2020. Double transformation rule applies for textiles." [ref=e782]:
+            - cell "Belgium" [ref=e783]
+            - cell "Vietnam" [ref=e784]
+            - cell "EVFTA" [ref=e785]
+            - cell [ref=e786]
+            - cell "EUR.1 or REX declaration" [ref=e787]
+            - cell "EVFTA active since Aug 2020. Double transformation rule applies for textiles." [ref=e788]
+          - row "India Saudi Arabia India-GCC FTA Standard Invoice No FTA in force. India-GCC FTA under negotiation since 2004. WTO MFN rates apply." [ref=e789]:
+            - cell "India" [ref=e790]
+            - cell "Saudi Arabia" [ref=e791]
+            - cell "India-GCC FTA" [ref=e792]
+            - cell [ref=e793]
+            - cell "Standard Invoice" [ref=e794]
+            - cell "No FTA in force. India-GCC FTA under negotiation since 2004. WTO MFN rates apply." [ref=e795]
+          - row "USA UAE No FTA Yes Standard Invoice UAE Free Zone import — no FTA preference. UAE FZs typically allow 0% import duty, but goods entering mainland UAE from FZ are subject to 5% customs duty." [ref=e796]:
+            - cell "USA" [ref=e797]
+            - cell "UAE" [ref=e798]
+            - cell "No FTA" [ref=e799]
+            - cell "Yes" [ref=e800]
+            - cell "Standard Invoice" [ref=e801]
+            - cell "UAE Free Zone import — no FTA preference. UAE FZs typically allow 0% import duty, but goods entering mainland UAE from FZ are subject to 5% customs duty." [ref=e802]
+          - row "Vietnam Saudi Arabia No FTA Standard Invoice No bilateral or regional FTA. Saudi MFN applies." [ref=e803]:
+            - cell "Vietnam" [ref=e804]
+            - cell "Saudi Arabia" [ref=e805]
+            - cell "No FTA" [ref=e806]
+            - cell [ref=e807]
+            - cell "Standard Invoice" [ref=e808]
+            - cell "No bilateral or regional FTA. Saudi MFN applies." [ref=e809]
+          - row "Cambodia India AIFTA Form AI AIFTA covers this lane. Cambodia also has LDC preferences." [ref=e810]:
+            - cell "Cambodia" [ref=e811]
+            - cell "India" [ref=e812]
+            - cell "AIFTA" [ref=e813]
+            - cell [ref=e814]
+            - cell "Form AI" [ref=e815]
+            - cell "AIFTA covers this lane. Cambodia also has LDC preferences." [ref=e816]
+          - row "Canada UK CPTPP CPTPP Certification / Canada-UK TCA Canada-UK Trade Continuity Agreement (2021) + CPTPP (2024)." [ref=e817]:
+            - cell "Canada" [ref=e818]
+            - cell "UK" [ref=e819]
+            - cell "CPTPP" [ref=e820]
+            - cell [ref=e821]
+            - cell "CPTPP Certification / Canada-UK TCA" [ref=e822]
+            - cell "Canada-UK Trade Continuity Agreement (2021) + CPTPP (2024)." [ref=e823]
+          - row "Vietnam India AIFTA Form AI AIFTA covers this lane. Vietnam's Form AI issued by VCCI." [ref=e824]:
+            - cell "Vietnam" [ref=e825]
+            - cell "India" [ref=e826]
+            - cell "AIFTA" [ref=e827]
+            - cell [ref=e828]
+            - cell "Form AI" [ref=e829]
+            - cell "AIFTA covers this lane. Vietnam's Form AI issued by VCCI." [ref=e830]
+          - row "Australia Vietnam AANZFTA Form AANZ AANZFTA + RCEP + CPTPP all cover." [ref=e831]:
+            - cell "Australia" [ref=e832]
+            - cell "Vietnam" [ref=e833]
+            - cell "AANZFTA" [ref=e834]
+            - cell [ref=e835]
+            - cell "Form AANZ" [ref=e836]
+            - cell "AANZFTA + RCEP + CPTPP all cover." [ref=e837]
+          - row "Mexico Canada USMCA USMCA Certification of Origin USMCA." [ref=e838]:
+            - cell "Mexico" [ref=e839]
+            - cell "Canada" [ref=e840]
+            - cell "USMCA" [ref=e841]
+            - cell [ref=e842]
+            - cell "USMCA Certification of Origin" [ref=e843]
+            - cell "USMCA." [ref=e844]
+          - row "India Qatar India-GCC FTA Standard Invoice No FTA in force. WTO MFN rates apply." [ref=e845]:
+            - cell "India" [ref=e846]
+            - cell "Qatar" [ref=e847]
+            - cell "India-GCC FTA" [ref=e848]
+            - cell [ref=e849]
+            - cell "Standard Invoice" [ref=e850]
+            - cell "No FTA in force. WTO MFN rates apply." [ref=e851]
+          - row "India Vietnam AIFTA Form AI AIFTA covers this lane." [ref=e852]:
+            - cell "India" [ref=e853]
+            - cell "Vietnam" [ref=e854]
+            - cell "AIFTA" [ref=e855]
+            - cell [ref=e856]
+            - cell "Form AI" [ref=e857]
+            - cell "AIFTA covers this lane." [ref=e858]
+          - row "China UAE CN-GCC FTA CN-GCC CEPA Form (pending) Signed Jan 2024 — verify current ratification/entry into force status before applying preferences." [ref=e859]:
+            - cell "China" [ref=e860]
+            - cell "UAE" [ref=e861]
+            - cell "CN-GCC FTA" [ref=e862]
+            - cell [ref=e863]
+            - cell "CN-GCC CEPA Form (pending)" [ref=e864]
+            - cell "Signed Jan 2024 — verify current ratification/entry into force status before applying preferences." [ref=e865]
+          - row "France India EU-India FTA (BTIA) Standard Invoice EU member — no EU-India FTA. MFN applies." [ref=e866]:
+            - cell "France" [ref=e867]
+            - cell "India" [ref=e868]
+            - cell "EU-India FTA (BTIA)" [ref=e869]
+            - cell [ref=e870]
+            - cell "Standard Invoice" [ref=e871]
+            - cell "EU member — no EU-India FTA. MFN applies." [ref=e872]
+          - row "Cambodia UAE UAE-CAMB CEPA UAE-Cambodia CEPA COO Signed July 2023, in force 2024. Benefits Cambodia's garment and agri exports." [ref=e873]:
+            - cell "Cambodia" [ref=e874]
+            - cell "UAE" [ref=e875]
+            - cell "UAE-CAMB CEPA" [ref=e876]
+            - cell [ref=e877]
+            - cell "UAE-Cambodia CEPA COO" [ref=e878]
+            - cell "Signed July 2023, in force 2024. Benefits Cambodia's garment and agri exports." [ref=e879]
+          - row "Myanmar India AIFTA Form AI AIFTA covers this lane. Myanmar also has LDC status for additional preferences." [ref=e880]:
+            - cell "Myanmar" [ref=e881]
+            - cell "India" [ref=e882]
+            - cell "AIFTA" [ref=e883]
+            - cell [ref=e884]
+            - cell "Form AI" [ref=e885]
+            - cell "AIFTA covers this lane. Myanmar also has LDC status for additional preferences." [ref=e886]
+          - row "Malaysia Thailand ATIGA Form D ATIGA 0%." [ref=e887]:
+            - cell "Malaysia" [ref=e888]
+            - cell "Thailand" [ref=e889]
+            - cell "ATIGA" [ref=e890]
+            - cell [ref=e891]
+            - cell "Form D" [ref=e892]
+            - cell "ATIGA 0%." [ref=e893]
+          - row "Hong Kong Vietnam AHKFTA AHKFTA COO In force Jun 2019." [ref=e894]:
+            - cell "Hong Kong" [ref=e895]
+            - cell "Vietnam" [ref=e896]
+            - cell "AHKFTA" [ref=e897]
+            - cell [ref=e898]
+            - cell "AHKFTA COO" [ref=e899]
+            - cell "In force Jun 2019." [ref=e900]
+          - row "Belgium Malaysia EU-Malaysia FTA Standard Invoice / EUR.1 (when concluded) EU-Malaysia FTA paused. WTO MFN rates currently apply." [ref=e901]:
+            - cell "Belgium" [ref=e902]
+            - cell "Malaysia" [ref=e903]
+            - cell "EU-Malaysia FTA" [ref=e904]
+            - cell [ref=e905]
+            - cell "Standard Invoice / EUR.1 (when concluded)" [ref=e906]
+            - cell "EU-Malaysia FTA paused. WTO MFN rates currently apply." [ref=e907]
+          - row "Iceland India EFTA-India TEPA EFTA-India TEPA Origin Declaration EFTA member — TEPA applies." [ref=e908]:
+            - cell "Iceland" [ref=e909]
+            - cell "India" [ref=e910]
+            - cell "EFTA-India TEPA" [ref=e911]
+            - cell [ref=e912]
+            - cell "EFTA-India TEPA Origin Declaration" [ref=e913]
+            - cell "EFTA member — TEPA applies." [ref=e914]
+          - row "Vietnam Malaysia ATIGA Form D ATIGA 0%. Also RCEP." [ref=e915]:
+            - cell "Vietnam" [ref=e916]
+            - cell "Malaysia" [ref=e917]
+            - cell "ATIGA" [ref=e918]
+            - cell [ref=e919]
+            - cell "Form D" [ref=e920]
+            - cell "ATIGA 0%. Also RCEP." [ref=e921]
+          - row "Poland UAE EU-UAE FTA Standard Invoice / EUR.1 (when FTA concluded) EU member state — no EU-UAE FTA in force. WTO MFN rates apply." [ref=e922]:
+            - cell "Poland" [ref=e923]
+            - cell "UAE" [ref=e924]
+            - cell "EU-UAE FTA" [ref=e925]
+            - cell [ref=e926]
+            - cell "Standard Invoice / EUR.1 (when FTA concluded)" [ref=e927]
+            - cell "EU member state — no EU-UAE FTA in force. WTO MFN rates apply." [ref=e928]
+          - row "Canada Japan CPTPP CPTPP Certification CPTPP applies; both parties." [ref=e929]:
+            - cell "Canada" [ref=e930]
+            - cell "Japan" [ref=e931]
+            - cell "CPTPP" [ref=e932]
+            - cell [ref=e933]
+            - cell "CPTPP Certification" [ref=e934]
+            - cell "CPTPP applies; both parties." [ref=e935]
+          - row "Vietnam Thailand ATIGA Form D ATIGA 0%." [ref=e936]:
+            - cell "Vietnam" [ref=e937]
+            - cell "Thailand" [ref=e938]
+            - cell "ATIGA" [ref=e939]
+            - cell [ref=e940]
+            - cell "Form D" [ref=e941]
+            - cell "ATIGA 0%." [ref=e942]
+          - row "Bangladesh India SAFTA SAFTA COO Bangladesh is LDC; India provides DFQF (Duty-Free Quota-Free) access for LDC exports beyond SAFTA." [ref=e943]:
+            - cell "Bangladesh" [ref=e944]
+            - cell "India" [ref=e945]
+            - cell "SAFTA" [ref=e946]
+            - cell [ref=e947]
+            - cell "SAFTA COO" [ref=e948]
+            - cell "Bangladesh is LDC; India provides DFQF (Duty-Free Quota-Free) access for LDC exports beyond SAFTA." [ref=e949]
+          - row "USA Australia No FTA AUSFTA Certification US-Australia FTA (2005) covers." [ref=e950]:
+            - cell "USA" [ref=e951]
+            - cell "Australia" [ref=e952]
+            - cell "No FTA" [ref=e953]
+            - cell [ref=e954]
+            - cell "AUSFTA Certification" [ref=e955]
+            - cell "US-Australia FTA (2005) covers." [ref=e956]
+          - row "Japan UAE No FTA Standard Invoice No FTA. Japan-GCC FTA negotiations paused." [ref=e957]:
+            - cell "Japan" [ref=e958]
+            - cell "UAE" [ref=e959]
+            - cell "No FTA" [ref=e960]
+            - cell [ref=e961]
+            - cell "Standard Invoice" [ref=e962]
+            - cell "No FTA. Japan-GCC FTA negotiations paused." [ref=e963]
+          - row "China India No FTA Standard Invoice No bilateral FTA; India opted out of RCEP. WTO MFN rates apply. Some India-specific ADD/CVD may apply on Chinese goods." [ref=e964]:
+            - cell "China" [ref=e965]
+            - cell "India" [ref=e966]
+            - cell "No FTA" [ref=e967]
+            - cell [ref=e968]
+            - cell "Standard Invoice" [ref=e969]
+            - cell "No bilateral FTA; India opted out of RCEP. WTO MFN rates apply. Some India-specific ADD/CVD may apply on Chinese goods." [ref=e970]
+          - row "Hong Kong Qatar No FTA Standard Invoice No FTA. Qatar MFN rates apply." [ref=e971]:
+            - cell "Hong Kong" [ref=e972]
+            - cell "Qatar" [ref=e973]
+            - cell "No FTA" [ref=e974]
+            - cell [ref=e975]
+            - cell "Standard Invoice" [ref=e976]
+            - cell "No FTA. Qatar MFN rates apply." [ref=e977]
+          - row "Vietnam Philippines ATIGA Form D ATIGA 0%." [ref=e978]:
+            - cell "Vietnam" [ref=e979]
+            - cell "Philippines" [ref=e980]
+            - cell "ATIGA" [ref=e981]
+            - cell [ref=e982]
+            - cell "Form D" [ref=e983]
+            - cell "ATIGA 0%." [ref=e984]
+          - row "Singapore India CECA Form AI / India-SG CECA COO Both AIFTA and bilateral CECA apply — use whichever gives better rate." [ref=e985]:
+            - cell "Singapore" [ref=e986]
+            - cell "India" [ref=e987]
+            - cell "CECA" [ref=e988]
+            - cell [ref=e989]
+            - cell "Form AI / India-SG CECA COO" [ref=e990]
+            - cell "Both AIFTA and bilateral CECA apply — use whichever gives better rate." [ref=e991]
+          - 'row "India UAE CEPA India-UAE CEPA COO In force 1 May 2022. ROO: 35% value addition. Watch for steel, gold, jewelry ROO requirements." [ref=e992]':
+            - cell "India" [ref=e993]
+            - cell "UAE" [ref=e994]
+            - cell "CEPA" [ref=e995]
+            - cell [ref=e996]
+            - cell "India-UAE CEPA COO" [ref=e997]
+            - 'cell "In force 1 May 2022. ROO: 35% value addition. Watch for steel, gold, jewelry ROO requirements." [ref=e998]'
+          - row "Vietnam UAE No FTA Standard Invoice No FTA in force. UAE-Vietnam CEPA negotiations ongoing as of 2024-2025." [ref=e999]:
+            - cell "Vietnam" [ref=e1000]
+            - cell "UAE" [ref=e1001]
+            - cell "No FTA" [ref=e1002]
+            - cell [ref=e1003]
+            - cell "Standard Invoice" [ref=e1004]
+            - cell "No FTA in force. UAE-Vietnam CEPA negotiations ongoing as of 2024-2025." [ref=e1005]
+          - row "Belgium Indonesia EU-Indonesia FTA Standard Invoice / EUR.1 (when concluded) EU-Indonesia CEPA negotiations ongoing. WTO MFN rates currently apply." [ref=e1006]:
+            - cell "Belgium" [ref=e1007]
+            - cell "Indonesia" [ref=e1008]
+            - cell "EU-Indonesia FTA" [ref=e1009]
+            - cell [ref=e1010]
+            - cell "Standard Invoice / EUR.1 (when concluded)" [ref=e1011]
+            - cell "EU-Indonesia CEPA negotiations ongoing. WTO MFN rates currently apply." [ref=e1012]
+          - row "UK UAE No FTA Standard Invoice UK-GCC FTA negotiations ongoing; not yet concluded. MFN applies." [ref=e1013]:
+            - cell "UK" [ref=e1014]
+            - cell "UAE" [ref=e1015]
+            - cell "No FTA" [ref=e1016]
+            - cell [ref=e1017]
+            - cell "Standard Invoice" [ref=e1018]
+            - cell "UK-GCC FTA negotiations ongoing; not yet concluded. MFN applies." [ref=e1019]
+  - contentinfo [ref=e1020]:
+    - generic [ref=e1021]:
+      - generic [ref=e1022]: Opptra
+      - generic [ref=e1023]: © 2026 Opptra Internal — FTA Playbook
+  - button "Open Next.js Dev Tools" [ref=e1029] [cursor=pointer]:
+    - img [ref=e1030]
+  - alert [ref=e1033]
