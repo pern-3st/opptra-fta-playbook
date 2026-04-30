@@ -2,33 +2,34 @@
 import { useMemo } from 'react';
 import type { PlaybookData } from '@/lib/types';
 import { useSelections } from '@/lib/url-state';
-import { resolveLane } from '@/lib/resolve-lane';
+import { resolveFTA } from '@/lib/resolve-fta';
+import { findLaneOverlay } from '@/lib/lane-overlay';
 import { LaneSelector } from '@/components/lane-selector';
 import { FTADetails } from '@/components/fta-details';
 import { ProductLookup } from '@/components/product-lookup';
 import { Playbook } from '@/components/playbook';
 import { ReferenceTable } from '@/components/reference-table';
-import { findAlternativeFTAs } from '@/lib/alternatives';
 import { findFallbackFTA } from '@/lib/fallback';
 
 export function PlaybookClient({ data }: { data: PlaybookData }) {
   const { selections, setSelections } = useSelections();
   const { origin, destination, freeZone, hsn } = selections;
 
-  const resolution = useMemo(() => {
+  const ftaResolution = useMemo(() => {
     if (!origin || !destination) return null;
-    return resolveLane(data.lanes, { originId: origin, destinationId: destination, isFreeZone: freeZone });
+    return resolveFTA(data.ftas, origin, destination);
+  }, [origin, destination, data.ftas]);
+
+  const fta = ftaResolution?.primary ?? null;
+  const alternatives = ftaResolution?.alternatives ?? [];
+
+  const overlay = useMemo(() => {
+    if (!origin || !destination) return { lane: null, freeZoneFallback: false };
+    return findLaneOverlay(data.lanes, { originId: origin, destinationId: destination, isFreeZone: freeZone });
   }, [origin, destination, freeZone, data.lanes]);
 
-  const lane = resolution?.lane ?? null;
-  const fta = useMemo(() => lane?.ftaId ? data.ftas.find(f => f.id === lane.ftaId) ?? null : null, [lane, data.ftas]);
+  const lane = overlay.lane;
   const fallbackFTA = useMemo(() => findFallbackFTA(data.ftas), [data.ftas]);
-  const alternatives = useMemo(
-    () => fta && lane
-      ? findAlternativeFTAs(data.ftas, lane.originId, lane.destinationId, fta.id)
-      : [],
-    [fta, lane, data.ftas],
-  );
   const originName = useMemo(
     () => origin ? data.countries.find(c => c.id === origin)?.name ?? '' : '',
     [origin, data.countries],
@@ -53,25 +54,24 @@ export function PlaybookClient({ data }: { data: PlaybookData }) {
 
       <LaneSelector
         countries={data.countries}
-        lanes={data.lanes}
         origin={origin}
         destination={destination}
         freeZone={freeZone}
         onChange={handleLaneChange}
       />
 
-      {origin && destination && !resolution && (
+      {origin && destination && !ftaResolution && (
         <p key={`no-fta-${origin}-${destination}`} className="text-sm text-grey mb-5 px-1 animate-fade-in">No FTA configured for this lane.</p>
       )}
-      {fta && lane && (
-        <div key={`fta-${fta.id}-${lane.originId}-${lane.destinationId}`} className="animate-section-in">
+      {fta && (
+        <div key={`fta-${fta.id}-${origin}-${destination}`} className="animate-section-in">
           <FTADetails
             fta={fta}
             lane={lane}
             alternatives={alternatives}
             originName={originName}
             destinationName={destinationName}
-            freeZoneFallback={resolution?.freeZoneFallback}
+            freeZoneFallback={overlay.freeZoneFallback}
           />
         </div>
       )}
@@ -83,11 +83,14 @@ export function PlaybookClient({ data }: { data: PlaybookData }) {
             chapters={data.chapters}
             selectedHsn={hsn}
             onPickHSN={(h) => setSelections({ hsn: h || null })}
+            fta={fta}
+            originName={originName}
+            destinationName={destinationName}
           />
         </div>
       )}
 
-      {fta && lane && hsn && (
+      {fta && hsn && (
         <div key={`playbook-${fta.id}-${hsn}`} className="animate-section-in">
           <Playbook
             fta={fta}
@@ -108,7 +111,7 @@ export function PlaybookClient({ data }: { data: PlaybookData }) {
         countries={data.countries}
         ftas={data.ftas}
         lanes={data.lanes}
-        defaultCollapsed={!!lane}
+        defaultCollapsed={!!fta}
       />
     </main>
   );

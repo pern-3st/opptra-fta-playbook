@@ -69,5 +69,6 @@ export function mapFTAProperties(p: NotionPage): Omit<FTA, 'body'> {
     description: plainText(p.properties['Description']),
     priority: num(p.properties['Priority']),
     memberCountryIds: relationIds(p.properties['Members']),
+    partnerCountryIds: relationIds(p.properties['Partners']),
   };
 }

@@ -7,7 +7,7 @@ import { Markdown } from './markdown';
 
 interface Props {
   fta: FTA;
-  lane: Lane;
+  lane: Lane | null;
   alternatives: FTA[];
   originName: string;
   destinationName: string;
@@ -59,7 +59,7 @@ export function FTADetails({ fta, lane, alternatives, originName, destinationNam
         )}
       </div>
 
-      {(lane.cooForm || lane.notes) && (
+      {lane && (lane.cooForm || lane.notes) && (
         <Notice className="mt-4">
           <Badge tone="orange" className="mb-2">Lane-specific</Badge>
           {lane.cooForm && <p><strong>COO form: </strong>{lane.cooForm}</p>}

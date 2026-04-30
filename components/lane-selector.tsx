@@ -1,47 +1,80 @@
 'use client';
 import { useMemo } from 'react';
-import type { Country, Lane } from '@/lib/types';
+import type { Country } from '@/lib/types';
 import { Card, StepHeader } from './ui/card';
-import { Select } from './ui/select';
+import { Combobox, type ComboboxGroup } from './ui/combobox';
 import { Field } from './ui/field';
 import { Checkbox } from './ui/checkbox';
 
 interface Props {
   countries: Country[];
-  lanes: Lane[];
   origin: string | null;
   destination: string | null;
   freeZone: boolean;
   onChange: (next: { origin?: string | null; destination?: string | null; freeZone?: boolean }) => void;
 }
 
-export function LaneSelector({ countries, lanes, origin, destination, freeZone, onChange }: Props) {
-  const originOptions = useMemo(
-    () => countries.slice().sort((a, b) => a.name.localeCompare(b.name)),
-    [countries],
+const UNGROUPED_LABEL = 'Other';
+
+function groupByRegion(countries: Country[]): ComboboxGroup[] {
+  const buckets = new Map<string, { regionSeq: number; countries: Country[] }>();
+  for (const c of countries) {
+    const label = c.region ?? UNGROUPED_LABEL;
+    const seq = c.regionSeq ?? Number.POSITIVE_INFINITY;
+    const bucket = buckets.get(label);
+    if (bucket) {
+      bucket.countries.push(c);
+      if (seq < bucket.regionSeq) bucket.regionSeq = seq;
+    } else {
+      buckets.set(label, { regionSeq: seq, countries: [c] });
+    }
+  }
+  return Array.from(buckets.entries())
+    .sort((a, b) => a[1].regionSeq - b[1].regionSeq || a[0].localeCompare(b[0]))
+    .map(([label, { countries }]) => ({
+      label,
+      options: countries
+        .slice()
+        .sort((a, b) => {
+          const ai = a.countrySeq ?? Number.POSITIVE_INFINITY;
+          const bi = b.countrySeq ?? Number.POSITIVE_INFINITY;
+          return ai - bi || a.name.localeCompare(b.name);
+        })
+        .map(c => ({ value: c.id, label: c.name })),
+    }));
+}
+
+export function LaneSelector({ countries, origin, destination, freeZone, onChange }: Props) {
+  const originGroups = useMemo(() => groupByRegion(countries), [countries]);
+  const destGroups = useMemo(
+    () => (origin ? groupByRegion(countries.filter(c => c.id !== origin)) : []),
+    [origin, countries],
   );
-  const destOptions = useMemo(() => {
-    if (!origin) return [];
-    const ids = new Set(lanes.filter(l => l.originId === origin).map(l => l.destinationId));
-    return countries.filter(c => ids.has(c.id)).sort((a, b) => a.name.localeCompare(b.name));
-  }, [origin, lanes, countries]);
 
   return (
     <Card>
       <StepHeader num={1} title="Select Trade Lane" subtitle="Choose origin and destination to identify the applicable FTA" />
       <div className="flex flex-col md:flex-row gap-3 md:items-end">
         <Field label="Origin" className="flex-1">
-          <Select value={origin ?? ''} onChange={e => onChange({ origin: e.target.value || null, destination: null })}>
-            <option value="">— Select origin —</option>
-            {originOptions.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-          </Select>
+          <Combobox
+            aria-label="Origin"
+            groups={originGroups}
+            value={origin}
+            onChange={v => onChange({ origin: v, destination: null })}
+            placeholder="— Select origin —"
+          />
         </Field>
         <div className="hidden md:block text-orange text-2xl font-bold pb-2">→</div>
         <Field label="Destination" className="flex-1">
-          <Select value={destination ?? ''} disabled={!origin} onChange={e => onChange({ destination: e.target.value || null })}>
-            <option value="">{origin ? '— Select destination —' : '— Select origin first —'}</option>
-            {destOptions.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-          </Select>
+          <Combobox
+            aria-label="Destination"
+            groups={destGroups}
+            value={destination}
+            onChange={v => onChange({ destination: v })}
+            placeholder="— Select destination —"
+            disabled={!origin}
+            disabledPlaceholder="— Select origin first —"
+          />
         </Field>
       </div>
       <Checkbox

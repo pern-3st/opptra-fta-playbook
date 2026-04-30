@@ -36,12 +36,17 @@ export interface FTA {
   description: string;
   priority: number | null;
   memberCountryIds: string[];
+  partnerCountryIds: string[];
   body: {
     description: string;
     tracks: string;
     chapterNotes: string;
     extras: string;
     resources: string;
+    chapterClassifications: {
+      sensitive: string[];
+      excluded: string[];
+    };
   };
 }
 

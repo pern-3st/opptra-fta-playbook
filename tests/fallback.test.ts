@@ -2,12 +2,12 @@ import { describe, it, expect } from 'vitest';
 import { findFallbackFTA, resolveFallbackPlaybookFields } from '@/lib/fallback';
 import type { FTA } from '@/lib/types';
 
-const blankBody = { description: '', tracks: '', chapterNotes: '', extras: '', resources: '' };
+const blankBody = { description: '', tracks: '', chapterNotes: '', extras: '', resources: '', chapterClassifications: { sensitive: [], excluded: [] } };
 const fta = (over: Partial<FTA>): FTA => ({
   id: '', name: '', shortCode: '', fullName: '', status: 'Active', statusLabel: '',
   inForce: '', coverage: '', tariffFramework: '', cooForm: '', roo: '',
   validity: '', claimWindow: '', retention: '', description: '',
-  priority: null, memberCountryIds: [], body: blankBody, ...over,
+  priority: null, memberCountryIds: [], partnerCountryIds: [], body: blankBody, ...over,
 });
 
 const fallback = fta({

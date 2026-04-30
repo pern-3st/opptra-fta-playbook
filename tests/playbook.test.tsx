@@ -10,8 +10,8 @@ const fta: FTA = {
   status: 'Active', statusLabel: 'Active', inForce: '', coverage: '',
   tariffFramework: '', cooForm: 'MICECA Certificate of Origin', roo: '35% RVC or CTC',
   validity: '', claimWindow: '', retention: '', description: '',
-  priority: 5, memberCountryIds: ['IN', 'MY'],
-  body: { description: '', tracks: '', chapterNotes: '', extras: '- Verify ADD/CVD on the HS line.', resources: '' },
+  priority: 5, memberCountryIds: ['IN', 'MY'], partnerCountryIds: [],
+  body: { description: '', tracks: '', chapterNotes: '', extras: '- Verify ADD/CVD on the HS line.', resources: '', chapterClassifications: { sensitive: [], excluded: [] } },
 };
 
 const fallback: FTA = {
@@ -21,7 +21,7 @@ const fallback: FTA = {
   validity: 'Non-preferential COO validity per issuing Chamber (typically 6–12 months)',
   claimWindow: 'WTO MFN rates apply on import',
   retention: 'Per destination-country customs law (typically 5 years…)',
-  body: { description: '', tracks: '', chapterNotes: '', extras: '', resources: '' },
+  body: { description: '', tracks: '', chapterNotes: '', extras: '', resources: '', chapterClassifications: { sensitive: [], excluded: [] } },
 };
 
 const lane: Lane = { id: 'L', originId: 'IN', destinationId: 'MY', ftaId: 'M', isFreeZone: false, cooForm: '', notes: '' };
@@ -78,6 +78,17 @@ describe('Playbook', () => {
                 syncedAt="2026-04-30T00:00:00.000Z" />,
     );
     expect(screen.getByText(/Indicative guidance only/i)).toBeTruthy();
+  });
+
+  it('renders without a lane overlay (membership-only match)', () => {
+    render(
+      <Playbook fta={fta} lane={null} product={null} hsn="9999" isManualEntry
+                defaults={defaults} fallback={fallback}
+                originName="India" destinationName="Malaysia"
+                syncedAt="2026-04-30T00:00:00.000Z" />,
+    );
+    expect(screen.queryByText(/Free Zone shipment/i)).toBeNull();
+    expect(screen.getByText(/COO \/ Origin Proof/i)).toBeTruthy();
   });
 
   it('renders with product=null and isManualEntry, showing the manual-entry note and HSN', () => {

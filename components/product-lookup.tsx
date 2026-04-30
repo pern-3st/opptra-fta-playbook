@@ -1,6 +1,6 @@
 'use client';
 import { useMemo, useState, type KeyboardEvent } from 'react';
-import type { Product, HSChapter } from '@/lib/types';
+import type { Product, HSChapter, FTA } from '@/lib/types';
 import { Card, StepHeader } from './ui/card';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
@@ -20,6 +20,9 @@ interface Props {
   chapters: HSChapter[];
   selectedHsn: string | null;
   onPickHSN: (hsn: string) => void;
+  fta: FTA;
+  originName: string;
+  destinationName: string;
 }
 
 type Action =
@@ -28,7 +31,7 @@ type Action =
 
 const LISTBOX_ID = 'product-lookup-listbox';
 
-export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Props) {
+export function ProductLookup({ products, chapters, selectedHsn, onPickHSN, fta, originName, destinationName }: Props) {
   const [query, setQuery] = useState('');
   const [chapterFilter, setChapterFilter] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -59,6 +62,9 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
         hsn={selectedHsn}
         product={products.find(p => p.hsnPrimary === selectedHsn) ?? null}
         chapter={chapters.find(c => c.code === selectedHsn.slice(0, 2)) ?? null}
+        fta={fta}
+        originName={originName}
+        destinationName={destinationName}
         onChange={() => onPickHSN('')}
       />
     );
@@ -376,8 +382,20 @@ function EscapeHatchRow({
 }
 
 function SelectedSummary({
-  hsn, product, chapter, onChange,
-}: { hsn: string; product: Product | null; chapter: HSChapter | null; onChange: () => void }) {
+  hsn, product, chapter, fta, originName, destinationName, onChange,
+}: {
+  hsn: string;
+  product: Product | null;
+  chapter: HSChapter | null;
+  fta: FTA;
+  originName: string;
+  destinationName: string;
+  onChange: () => void;
+}) {
+  const hsType = hsTypeLabel(hsn);
+  const formattedHsn = formatHsn(hsn);
+  const chapterCode = chapter?.code ?? hsn.slice(0, 2);
+  const trackTile = resolveTrackTile(fta, chapterCode);
   return (
     <Card>
       <StepHeader num={2} title="Identify what you're shipping" />
@@ -410,6 +428,108 @@ function SelectedSummary({
           Change
         </Button>
       </div>
+
+      {chapter && (
+        <div className="mt-5 rounded-xl border border-black/5 bg-canvas px-5 py-4">
+          <div className="text-xs font-semibold uppercase tracking-wider text-grey">
+            HS Code · {hsType}
+          </div>
+          <h3 className="font-heading font-bold text-navy text-lg mt-1">
+            Chapter {chapter.code}: {chapter.name}
+          </h3>
+          {chapter.description && (
+            <p className="text-sm text-navy mt-1">{chapter.description}</p>
+          )}
+          {chapter.section && (
+            <p className="text-xs text-grey mt-1.5 italic">{chapter.section}</p>
+          )}
+        </div>
+      )}
+
+      <div className="mt-5">
+        <h4 className="font-heading font-bold text-navy mb-2">
+          FTA Concession Classification — {originName} → {destinationName}
+        </h4>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <ConcessionTile
+            heading={fta.shortCode || fta.name}
+            track={trackTile.track}
+            body={trackTile.body}
+            tone={trackTile.tone}
+          />
+          <ConcessionTile
+            heading="MFN Benchmark"
+            track="WTO MFN Rate"
+            body="Always compare the FTA preferential rate against the MFN rate. If MFN rate is already 0% (common for Singapore, HK, UAE), FTA may offer no additional duty benefit."
+          />
+          <ConcessionTile
+            heading="HS Code Precision"
+            track={`Entered: ${formattedHsn}`}
+            body="FTA concessions are applied at the 6-digit or 8-digit tariff line level. Obtain the country-specific HS code (tariff line) to determine the exact applicable rate."
+          />
+        </div>
+      </div>
     </Card>
   );
+}
+
+type TileTone = 'neutral' | 'normal' | 'sensitive' | 'excluded';
+
+function ConcessionTile({ heading, track, body, tone = 'neutral' }: { heading: string; track: string; body: string; tone?: TileTone }) {
+  const toneStyles: Record<TileTone, { container: string; track: string }> = {
+    neutral:   { container: 'bg-white border-black/5',         track: 'text-navy' },
+    normal:    { container: 'bg-white border-orange/30',       track: 'text-orange' },
+    sensitive: { container: 'bg-yellow border-orange/40',      track: 'text-orange' },
+    excluded:  { container: 'bg-orange/10 border-orange/60',   track: 'text-orange' },
+  };
+  const s = toneStyles[tone];
+  return (
+    <div className={cn('rounded-xl border p-4', s.container)}>
+      <div className="text-xs font-semibold uppercase tracking-wider text-orange">{heading}</div>
+      <div className={cn('text-sm font-bold mt-1', s.track)}>{track}</div>
+      <p className="text-xs text-grey mt-1.5 leading-relaxed">{body}</p>
+    </div>
+  );
+}
+
+function hsTypeLabel(hsn: string): string {
+  if (hsn.length >= 8) return 'Subheading (8-digit)';
+  if (hsn.length >= 6) return 'Subheading (6-digit)';
+  if (hsn.length >= 4) return 'Heading (4-digit)';
+  return 'Chapter (2-digit)';
+}
+
+function formatHsn(hsn: string): string {
+  return hsn.replace(/(.{2})(?=.)/g, '$1 ').trim();
+}
+
+function resolveTrackTile(fta: FTA, chapterCode: string): { track: string; body: string; tone: TileTone } {
+  const { sensitive, excluded } = fta.body.chapterClassifications;
+  const hasData = sensitive.length > 0 || excluded.length > 0;
+  if (!hasData) {
+    return {
+      track: 'Verify in Official Schedule',
+      body: `Consult the official FTA tariff schedule for the specific concession applicable to Chapter ${chapterCode} under ${fta.name}.`,
+      tone: 'neutral',
+    };
+  }
+  if (excluded.includes(chapterCode)) {
+    return {
+      track: '⛔ Exclusion List',
+      body: `This chapter is on the Exclusion List under ${fta.name}. MFN rates apply — no preferential tariff available.`,
+      tone: 'excluded',
+    };
+  }
+  if (sensitive.includes(chapterCode)) {
+    return {
+      track: '⚠ Sensitive / Restricted Track',
+      body: `This chapter is classified as Sensitive under ${fta.name}. Concessions are limited — rates may not reach 0%. Verify the specific tariff line in the official FTA schedule.`,
+      tone: 'sensitive',
+    };
+  }
+  return {
+    track: '✓ Normal Track — Eligible for Concession',
+    body: `This chapter is on the Normal Track under ${fta.name}. Verify the exact preferential rate at the 8-digit tariff line in the official schedule.`,
+    tone: 'normal',
+  };
 }

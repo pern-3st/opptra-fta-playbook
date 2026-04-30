@@ -46,6 +46,27 @@
     font-family: var(--font-heading);
     color: var(--color-navy);
   }
+  /* Tailwind v4 ships native <button> as cursor:default. Restore the
+     pointer cursor users expect on interactive controls. Disabled
+     states keep the not-allowed cursor set elsewhere. */
+  button:not(:disabled),
+  summary,
+  select:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="combobox"]:not(:disabled),
+  [role="tab"]:not([aria-disabled="true"]),
+  [role="option"]:not([aria-disabled="true"]),
+  [role="menuitem"]:not([aria-disabled="true"]),
+  [role="switch"]:not([aria-disabled="true"]),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled),
+  input[type="submit"]:not(:disabled),
+  input[type="reset"]:not(:disabled),
+  input[type="file"]:not(:disabled),
+  label:has(> input[type="checkbox"]:not(:disabled)),
+  label:has(> input[type="radio"]:not(:disabled)) {
+    cursor: pointer;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

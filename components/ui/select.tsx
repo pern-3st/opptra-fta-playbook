@@ -1,4 +1,5 @@
 import { cn } from '@/lib/cn';
+import { ChevronDownIcon } from './icon';
 
 export function Select({ className, children, ...rest }: React.SelectHTMLAttributes<HTMLSelectElement>) {
   return (
@@ -13,14 +14,10 @@ export function Select({ className, children, ...rest }: React.SelectHTMLAttribu
       >
         {children}
       </select>
-      <svg
-        aria-hidden
-        viewBox="0 0 20 20"
-        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-grey"
-        fill="currentColor"
-      >
-        <path d="M5.5 7.5L10 12l4.5-4.5z" />
-      </svg>
+      <ChevronDownIcon
+        size={16}
+        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-grey"
+      />
     </div>
   );
 }

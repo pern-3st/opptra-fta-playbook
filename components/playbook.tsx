@@ -7,7 +7,7 @@ import { resolveFallbackPlaybookFields } from '@/lib/fallback';
 
 interface Props {
   fta: FTA;
-  lane: Lane;
+  lane: Lane | null;
   product: Product | null;
   hsn?: string;
   isManualEntry?: boolean;
@@ -23,7 +23,7 @@ const REVIEWED_FMT = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: '
 export function Playbook({ fta, lane, product, hsn, isManualEntry, defaults, fallback, originName, destinationName, syncedAt }: Props) {
   const resolved = resolveFallbackPlaybookFields(fta, fallback);
   const ftaLabel = fta.shortCode || fta.name;
-  const cooForm = lane.cooForm || resolved.cooForm;
+  const cooForm = lane?.cooForm || resolved.cooForm;
   const extras = parseBullets(fta.body.extras);
   const hsnLabel = product?.hsnPrimary ?? hsn ?? '';
 
@@ -38,7 +38,7 @@ export function Playbook({ fta, lane, product, hsn, isManualEntry, defaults, fal
         <Badge tone="navy">{originName} → {destinationName}</Badge>
         <Badge tone="navy">HS {hsnLabel}</Badge>
         <Badge tone="navy">FTA: {ftaLabel}</Badge>
-        {lane.isFreeZone && <Badge tone="orange">Free Zone shipment</Badge>}
+        {lane?.isFreeZone && <Badge tone="orange">Free Zone shipment</Badge>}
         {isManualEntry && <Badge tone="orange">Manual-entry tariff line</Badge>}
       </div>
 

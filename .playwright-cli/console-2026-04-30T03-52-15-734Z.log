@@ -139,3 +139,366 @@
 [ 8692479ms] [LOG] [Fast Refresh] done in 20ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
 [ 8890822ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
 [ 8891823ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8892827ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8893831ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8894834ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8899842ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8904847ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8909870ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8914887ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8919938ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8925062ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=xaYz2z8Xk0_9rH9Jda65I' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[ 8930303ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 8930633ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 8930683ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13989922ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13990338ms] [LOG] [Fast Refresh] done in 500ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13992728ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13992754ms] [LOG] [Fast Refresh] done in 24ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13997988ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[13998014ms] [LOG] [Fast Refresh] done in 20ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14020852ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14020883ms] [LOG] [Fast Refresh] done in 104ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14030232ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14030273ms] [LOG] [Fast Refresh] done in 31ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14484529ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14484582ms] [LOG] [Fast Refresh] done in 94ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14569881ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14569907ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14574020ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14574045ms] [LOG] [Fast Refresh] done in 20ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14581520ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14581546ms] [LOG] [Fast Refresh] done in 27ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14594083ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[14594108ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15685302ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15685343ms] [LOG] [Fast Refresh] done in 39ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15748686ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15748692ms] [LOG] [Fast Refresh] done in 107ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15803803ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15804006ms] [LOG] [Fast Refresh] done in 293ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15804042ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at eval (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Flib%252Fresolve-fta.ts+%255Bapp-client%255D+%2528ecmascript%2529:17:22)
+    at Array.filter (<anonymous>)
+    at matchingFTAs (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Flib%252Fresolve-fta.ts+%255Bapp-client%255D+%2528ecmascript%2529:13:177)
+    at resolveFTA (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Flib%252Fresolve-fta.ts+%255Bapp-client%255D+%2528ecmascript%2529:23:21)
+    at PlaybookClient.useMemo[ftaResolution] (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Fapp%252Fclient.tsx+%255Bapp-client%255D+%2528ecmascript%2529:39:159)
+    at mountMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:5393:25)
+    at Object.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15213:24)
+    at exports.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:1742:36)
+    at PlaybookClient (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Fapp%252Fclient.tsx+%255Bapp-client%255D+%2528ecmascript%2529:36:200)
+    at Object.react_stack_bottom_frame (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:186)
+    at performSyncWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10179:316)
+    at processRootScheduleInMicrotask (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10200:106)
+    at http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10274:158
+[15813394ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15813394ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15813474ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at eval (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Flib%252Fresolve-fta.ts+%255Bapp-client%255D+%2528ecmascript%2529:17:22)
+    at Array.filter (<anonymous>)
+    at matchingFTAs (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Flib%252Fresolve-fta.ts+%255Bapp-client%255D+%2528ecmascript%2529:13:177)
+    at resolveFTA (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Flib%252Fresolve-fta.ts+%255Bapp-client%255D+%2528ecmascript%2529:23:21)
+    at PlaybookClient.useMemo[ftaResolution] (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Fapp%252Fclient.tsx+%255Bapp-client%255D+%2528ecmascript%2529:39:159)
+    at mountMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:5393:25)
+    at Object.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15213:24)
+    at exports.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:1742:36)
+    at PlaybookClient (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js?id=%255Bproject%255D%252Fapp%252Fclient.tsx+%255Bapp-client%255D+%2528ecmascript%2529:36:200)
+    at Object.react_stack_bottom_frame (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performSyncWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10179:316)
+    at flushSyncWork$1 (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9230:86)
+    at Object.scheduleRefresh (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:299:13)
+    at http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:391:33
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:384:38)
+    at applyUpdate (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:878:31)
+    at http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:886:13
+[15813475ms] [LOG] [Fast Refresh] done in 23ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15813758ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15813792ms] [LOG] [Fast Refresh] done in 136ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15813854ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15813876ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15813917ms] Error: Switched to client rendering because the server rendering errored:
+
+Cannot read properties of undefined (reading 'length')
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:261:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:257:174)
+    at resolveFTA (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:267:21)
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:2932:152
+    at Object.useMemo (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:86682)
+    at exports.useMemo (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:504179)
+    at PlaybookClient (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:2930:240)
+    at Object.react_stack_bottom_frame (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:311311)
+    at renderWithHooks (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:118339)
+    at renderElement (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:133011)
+    at renderElement (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:194974)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201940)
+    at renderNodeDestructive (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201175)
+    at renderNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:213093)
+    at renderChildrenArray (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:207654)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:202417)
+    at renderNodeDestructive (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201175)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:202325)
+    at performWork (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:223847)
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:103213
+    at node:internal/process/task_queues:150:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:213:14)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:147:8)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:472:9)
+    at process.callbackTrampoline (node:internal/async_hooks:131:14)
+[15814258ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:312:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:308:177)
+    at resolveFTA (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:318:21)
+    at PlaybookClient.useMemo[ftaResolution] (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3081:159)
+    at mountMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:5393:25)
+    at Object.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15213:24)
+    at exports.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:1742:36)
+    at PlaybookClient (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3078:200)
+    at Object.react_stack_bottom_frame (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[15820141ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15820142ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15820312ms] [LOG] [Fast Refresh] done in 20ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15820441ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15820448ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15820485ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:312:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:308:177)
+    at resolveFTA (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:318:21)
+    at PlaybookClient.useMemo[ftaResolution] (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3081:159)
+    at mountMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:5393:25)
+    at Object.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15213:24)
+    at exports.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:1742:36)
+    at PlaybookClient (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3078:200)
+    at Object.react_stack_bottom_frame (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[15820547ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15820587ms] [LOG] [Fast Refresh] done in 139ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15823752ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15823752ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15823884ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15823989ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15824005ms] [LOG] [Fast Refresh] done in 117ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15824027ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15824035ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15824078ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:312:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:308:177)
+    at resolveFTA (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:318:21)
+    at PlaybookClient.useMemo[ftaResolution] (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3081:159)
+    at mountMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:5393:25)
+    at Object.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15213:24)
+    at exports.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:1742:36)
+    at PlaybookClient (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3078:200)
+    at Object.react_stack_bottom_frame (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[15824140ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15824170ms] [LOG] [Fast Refresh] done in 131ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15849969ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15849970ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15850126ms] [LOG] [Fast Refresh] done in 33ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15850232ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15850245ms] [LOG] [Fast Refresh] done in 116ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15850308ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15850311ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15850339ms] Error: Switched to client rendering because the server rendering errored:
+
+Cannot read properties of undefined (reading 'length')
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:261:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:257:174)
+    at resolveFTA (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:267:21)
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:2932:152
+    at Object.useMemo (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:86682)
+    at exports.useMemo (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:504179)
+    at PlaybookClient (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:2930:240)
+    at Object.react_stack_bottom_frame (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:311311)
+    at renderWithHooks (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:118339)
+    at renderElement (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:133011)
+    at renderElement (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:194974)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201940)
+    at renderNodeDestructive (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201175)
+    at renderNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:213093)
+    at renderChildrenArray (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:207654)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:202417)
+    at renderNodeDestructive (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201175)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:202325)
+    at performWork (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:223847)
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:103213
+    at node:internal/process/task_queues:150:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:213:14)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:147:8)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:472:9)
+    at process.callbackTrampoline (node:internal/async_hooks:131:14)
+[15850442ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:312:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:308:177)
+    at resolveFTA (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:318:21)
+    at PlaybookClient.useMemo[ftaResolution] (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3075:159)
+    at mountMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:5393:25)
+    at Object.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15213:24)
+    at exports.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:1742:36)
+    at PlaybookClient (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3072:200)
+    at Object.react_stack_bottom_frame (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[15850533ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[15850577ms] [LOG] [Fast Refresh] done in 146ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063226ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063252ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063402ms] [LOG] [Fast Refresh] done in 125ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063507ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063514ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063559ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063567ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063603ms] Error: Switched to client rendering because the server rendering errored:
+
+Cannot read properties of undefined (reading 'length')
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:261:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:257:174)
+    at resolveFTA (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:267:21)
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:2932:152
+    at Object.useMemo (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:86682)
+    at exports.useMemo (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:504179)
+    at PlaybookClient (/Users/pern/Documents/Projects/opptra-fta-playbook/web/.next/dev/server/chunks/ssr/[root-of-the-server]__0f7o9ky._.js:2930:240)
+    at Object.react_stack_bottom_frame (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:311311)
+    at renderWithHooks (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:118339)
+    at renderElement (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:133011)
+    at renderElement (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:194974)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201940)
+    at renderNodeDestructive (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201175)
+    at renderNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:213093)
+    at renderChildrenArray (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:207654)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:202417)
+    at renderNodeDestructive (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:201175)
+    at retryNode (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:202325)
+    at performWork (/Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:223847)
+    at /Users/pern/Documents/Projects/opptra-fta-playbook/web/node_modules/next/dist/compiled/next-server/app-page-turbo.runtime.dev.js:2:103213
+    at node:internal/process/task_queues:150:7
+    at AsyncResource.runInAsyncScope (node:async_hooks:213:14)
+    at AsyncResource.runMicrotask (node:internal/process/task_queues:147:8)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:472:9)
+    at process.callbackTrampoline (node:internal/async_hooks:131:14)
+[16063604ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:312:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:308:177)
+    at resolveFTA (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:318:21)
+    at PlaybookClient.useMemo[ftaResolution] (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3097:159)
+    at mountMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:5393:25)
+    at Object.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15213:24)
+    at exports.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:1742:36)
+    at PlaybookClient (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3094:200)
+    at Object.react_stack_bottom_frame (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[16063671ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16063704ms] [LOG] [Fast Refresh] done in 134ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16234566ms] [ERROR] WebSocket connection to 'ws://localhost:3002/_next/webpack-hmr?id=2vuWJ--Tf0lRPglktoSje' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[16235573ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16236163ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16236186ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16236249ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:312:22
+    at Array.filter (<anonymous>)
+    at matchingFTAs (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:308:177)
+    at resolveFTA (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:318:21)
+    at PlaybookClient.useMemo[ftaResolution] (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3097:159)
+    at mountMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:5393:25)
+    at Object.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15213:24)
+    at exports.useMemo (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:1742:36)
+    at PlaybookClient (http://localhost:3002/_next/static/chunks/_0f4nk6q._.js:3094:200)
+    at Object.react_stack_bottom_frame (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3002/_next/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+[16236463ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16236478ms] [LOG] [Fast Refresh] done in 115ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16258517ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16258639ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16258832ms] [LOG] [Fast Refresh] done in 223ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16258959ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16258974ms] [LOG] [HMR] connected @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16875213ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16875308ms] [LOG] [Fast Refresh] done in 113ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16889561ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16889719ms] [LOG] [Fast Refresh] done in 187ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16928979ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[16929004ms] [LOG] [Fast Refresh] done in 22ms @ http://localhost:3002/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

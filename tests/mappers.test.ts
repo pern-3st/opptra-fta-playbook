@@ -41,4 +41,17 @@ describe('mappers', () => {
     expect(out.priority).toBe(10);
     expect(out.memberCountryIds).toEqual(['country-1', 'country-2']);
   });
+
+  it('mapFTAProperties maps Partners relation to partnerCountryIds (empty when missing)', () => {
+    const withPartners = {
+      ...f.ftaPage,
+      properties: {
+        ...f.ftaPage.properties,
+        'Partners': { type: 'relation' as const, relation: [{ id: 'country-japan-id' }] },
+      },
+    };
+    expect(mapFTAProperties(withPartners).partnerCountryIds).toEqual(['country-japan-id']);
+    // Missing Partners property → empty array (relationIds returns [] for non-arrays).
+    expect(mapFTAProperties(f.ftaPage).partnerCountryIds).toEqual([]);
+  });
 });

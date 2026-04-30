@@ -33,22 +33,52 @@ export function sectionByHeadings<K extends string>(
   return out;
 }
 
+export interface ChapterClassifications {
+  sensitive: string[];
+  excluded: string[];
+}
+
 export interface FTASections {
   description: string;
   tracks: string;
   chapterNotes: string;
   extras: string;
   resources: string;
+  chapterClassifications: ChapterClassifications;
 }
 
 export function sectionFTABody(md: string): FTASections {
-  return sectionByHeadings(md, {
+  const raw = sectionByHeadings(md, {
     description: LEAD,
     tracks: 'Tracks',
     chapterNotes: 'Chapter Notes',
     extras: 'Extra Points',
     resources: 'Resources',
+    chapterClassifications: 'Chapter Classifications',
   });
+  return {
+    description: raw.description,
+    tracks: raw.tracks,
+    chapterNotes: raw.chapterNotes,
+    extras: raw.extras,
+    resources: raw.resources,
+    chapterClassifications: parseChapterClassifications(raw.chapterClassifications),
+  };
+}
+
+export function parseChapterClassifications(md: string): ChapterClassifications {
+  const out: ChapterClassifications = { sensitive: [], excluded: [] };
+  for (const raw of md.split('\n')) {
+    const line = raw.replace(/^[-*]\s*/, '').trim();
+    if (!line) continue;
+    const colon = line.indexOf(':');
+    if (colon === -1) continue;
+    const label = line.slice(0, colon).trim().toLowerCase();
+    const codes = line.slice(colon + 1).split(/[,\s]+/).map(s => s.trim()).filter(Boolean);
+    if (label === 'sensitive' || label === 'sensitive list') out.sensitive.push(...codes);
+    else if (label === 'excluded' || label === 'exclusion' || label === 'exclusion list') out.excluded.push(...codes);
+  }
+  return out;
 }
 
 export interface ComplianceSections {

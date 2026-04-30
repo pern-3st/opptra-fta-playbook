@@ -2,7 +2,15 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ProductLookup } from '@/components/product-lookup';
-import type { Product, HSChapter } from '@/lib/types';
+import type { Product, HSChapter, FTA } from '@/lib/types';
+
+const fta: FTA = {
+  id: 'fta1', name: 'AIFTA', shortCode: 'AIFTA', fullName: 'ASEAN-India Free Trade Area',
+  status: 'Active', statusLabel: 'Active', inForce: '', coverage: '', tariffFramework: '',
+  cooForm: '', roo: '', validity: '', claimWindow: '', retention: '', description: '',
+  priority: null, memberCountryIds: [], partnerCountryIds: [],
+  body: { description: '', tracks: '', chapterNotes: '', extras: '', resources: '', chapterClassifications: { sensitive: [], excluded: [] } },
+};
 
 const chapters: HSChapter[] = [
   { id: 'c94', code: '94', name: 'Furniture', description: 'Furniture; bedding, mattresses; lamps and lighting fittings', section: 'Section XX — Miscellaneous manufactured articles', notes: '' },
@@ -22,6 +30,9 @@ function renderLookup(overrides: Partial<React.ComponentProps<typeof ProductLook
     chapters,
     selectedHsn: null,
     onPickHSN: () => {},
+    fta,
+    originName: 'India',
+    destinationName: 'Bangladesh',
     ...overrides,
   };
   return render(<ProductLookup {...props} />);
@@ -146,6 +157,32 @@ describe('ProductLookup — selected state', () => {
   it('summary card is in an aria-live region', () => {
     const { container } = renderLookup({ selectedHsn: '94013000' });
     expect(container.querySelector('[aria-live="polite"]')).toBeInTheDocument();
+  });
+});
+
+describe('ProductLookup — concession track tile', () => {
+  it('shows "Verify in Official Schedule" when no chapter classifications are configured', () => {
+    renderLookup({ selectedHsn: '94013000' });
+    expect(screen.getByText(/Verify in Official Schedule/i)).toBeInTheDocument();
+  });
+
+  it('shows the Exclusion tile when the chapter is on the excluded list', () => {
+    const exclFta: FTA = { ...fta, body: { ...fta.body, chapterClassifications: { sensitive: [], excluded: ['94'] } } };
+    renderLookup({ selectedHsn: '94013000', fta: exclFta });
+    expect(screen.getByText(/⛔ Exclusion List/)).toBeInTheDocument();
+    expect(screen.getByText(/MFN rates apply/i)).toBeInTheDocument();
+  });
+
+  it('shows the Sensitive tile when the chapter is on the sensitive list', () => {
+    const sensFta: FTA = { ...fta, body: { ...fta.body, chapterClassifications: { sensitive: ['94'], excluded: [] } } };
+    renderLookup({ selectedHsn: '94013000', fta: sensFta });
+    expect(screen.getByText(/Sensitive \/ Restricted Track/i)).toBeInTheDocument();
+  });
+
+  it('shows the Normal Track tile when classifications exist but the chapter is in neither list', () => {
+    const normFta: FTA = { ...fta, body: { ...fta.body, chapterClassifications: { sensitive: ['10'], excluded: ['93'] } } };
+    renderLookup({ selectedHsn: '94013000', fta: normFta });
+    expect(screen.getByText(/Normal Track — Eligible for Concession/i)).toBeInTheDocument();
   });
 });
 

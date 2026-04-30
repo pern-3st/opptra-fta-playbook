@@ -12,11 +12,12 @@ const fta: FTA = {
   cooForm: 'MICECA Certificate of Origin',
   roo: '35% RVC or CTC',
   validity: '', claimWindow: '', retention: '', description: 'MICECA provides bilateral preferences…',
-  priority: 5, memberCountryIds: ['IN', 'MY'],
+  priority: 5, memberCountryIds: ['IN', 'MY'], partnerCountryIds: [],
   body: {
     description: 'MICECA provides bilateral preferences…',
     tracks: '- Normal Track: 0% phased over 2011–2016\n- Sensitive List: 5% ceiling\n- Exclusion: MFN rates apply',
     chapterNotes: '', extras: '', resources: '',
+    chapterClassifications: { sensitive: [], excluded: [] },
   },
 };
 
@@ -55,5 +56,11 @@ describe('FTADetails', () => {
     render(<FTADetails fta={fta} lane={lane} alternatives={[]} originName="India" destinationName="Malaysia" />);
     expect(screen.getByText(/MICECA Certificate of Origin/i)).toBeTruthy();
     expect(screen.getByText(/35% RVC or CTC/i)).toBeTruthy();
+  });
+
+  it('renders without a lane overlay (membership-only match)', () => {
+    render(<FTADetails fta={fta} lane={null} alternatives={[]} originName="India" destinationName="Malaysia" />);
+    expect(screen.queryByText(/Lane-specific/i)).toBeNull();
+    expect(screen.getByText(fta.name)).toBeTruthy();
   });
 });
