@@ -111,7 +111,7 @@ export function PlaybookClient({ data }: { data: PlaybookData }) {
         countries={data.countries}
         ftas={data.ftas}
         lanes={data.lanes}
-        defaultCollapsed={!!fta}
+        defaultCollapsed
       />
     </main>
   );
