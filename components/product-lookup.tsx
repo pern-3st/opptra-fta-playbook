@@ -3,7 +3,15 @@ import { useMemo, useState, type KeyboardEvent } from 'react';
 import type { Product, HSChapter } from '@/lib/types';
 import { Card, StepHeader } from './ui/card';
 import { Input } from './ui/input';
-import { searchProducts, classifyQuery } from '@/lib/search';
+import {
+  searchProducts,
+  classifyQuery,
+  searchChapters,
+  highlightMatch,
+  countProductsByChapter,
+  countNameMatches,
+  NAME_RESULT_CAP,
+} from '@/lib/search';
 
 interface Props {
   products: Product[];
@@ -23,11 +31,25 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
   const [chapterFilter, setChapterFilter] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const cls = classifyQuery(query, chapters);
+  const chapterCounts = useMemo(() => countProductsByChapter(products), [products]);
   const results = useMemo(
     () => searchProducts(products, query, chapterFilter),
     [products, query, chapterFilter],
   );
+  const nameChapterCandidates = useMemo(
+    () => {
+      const t = query.trim();
+      if (!t || /^[\d\s.\-]+$/.test(t)) return [];
+      return searchChapters(chapters, t);
+    },
+    [query, chapters],
+  );
+  const totalNameMatches = useMemo(() => {
+    const t = query.trim();
+    if (!t || /^[\d\s.\-]+$/.test(t)) return 0;
+    const pool = chapterFilter ? products.filter(p => p.hsChapterCode === chapterFilter) : products;
+    return countNameMatches(pool, t);
+  }, [query, products, chapterFilter]);
 
   if (selectedHsn) {
     return (
@@ -40,15 +62,25 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
     );
   }
 
+  const cls = classifyQuery(query, chapters);
   const knownChapter = cls.kind === 'hsn' ? cls.knownChapter : null;
   const digits = cls.kind === 'hsn' ? cls.digits : '';
   const exactly8 = cls.kind === 'hsn' ? cls.exactly8 : false;
 
-  const showNarrow = !chapterFilter && knownChapter !== null && !exactly8;
+  const showDigitNarrow = !chapterFilter && knownChapter !== null && !exactly8;
   const showEscapeHatch = results.length === 0 && knownChapter !== null && exactly8;
 
+  const nameChapterMatches = cls.kind === 'name'
+    ? nameChapterCandidates.filter(c => c.code !== chapterFilter && !(showDigitNarrow && knownChapter && c.code === knownChapter.code))
+    : [];
+
+  const extraCount = cls.kind === 'name' && results.length >= NAME_RESULT_CAP
+    ? Math.max(0, totalNameMatches - results.length)
+    : 0;
+
   const actions: Action[] = [];
-  if (showNarrow && knownChapter) actions.push({ kind: 'filter', code: knownChapter.code });
+  if (showDigitNarrow && knownChapter) actions.push({ kind: 'filter', code: knownChapter.code });
+  for (const c of nameChapterMatches) actions.push({ kind: 'filter', code: c.code });
   for (const p of results) actions.push({ kind: 'commit', hsn: p.hsnPrimary });
   if (showEscapeHatch) actions.push({ kind: 'commit', hsn: digits });
 
@@ -78,9 +110,19 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
 
   const filteredChapter = chapterFilter ? chapters.find(c => c.code === chapterFilter) ?? null : null;
   const isEmpty = query === '' && !chapterFilter;
+  const filterEmptyState = !!filteredChapter && query === '';
+  const filteredHasProducts = filterEmptyState && results.length > 0;
+  const filteredNoProducts = filterEmptyState && results.length === 0;
 
   let noMatchNode: React.ReactNode = null;
-  if (!isEmpty && results.length === 0 && !showNarrow && !showEscapeHatch) {
+  if (filteredNoProducts) {
+    noMatchNode = (
+      <p className="mt-3 text-sm text-grey">
+        No catalogued products in Chapter {filteredChapter!.code} — {filteredChapter!.name}.
+        Type the 8-digit HSN to enter it manually, or remove the filter.
+      </p>
+    );
+  } else if (!isEmpty && results.length === 0 && nameChapterMatches.length === 0 && !showDigitNarrow && !showEscapeHatch) {
     if (cls.kind === 'hsn') {
       if (!knownChapter) {
         noMatchNode = (
@@ -99,11 +141,11 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
       noMatchNode = (
         <>
           <p className="mt-3 text-sm text-grey">No matches. Try a different word, or browse a chapter below.</p>
-          <ChapterGrid chapters={chapters} onPick={code => setChapterFilter(code)} />
+          <ChapterGrid chapters={chapters} counts={chapterCounts} onPick={code => setChapterFilter(code)} />
         </>
       );
     }
-  } else if (!isEmpty && results.length === 0 && showNarrow && !exactly8) {
+  } else if (!isEmpty && results.length === 0 && showDigitNarrow && !exactly8) {
     noMatchNode = (
       <p className="mt-3 text-sm text-grey">
         Need 8 digits to commit. You&apos;re at {digits.length}.
@@ -112,6 +154,7 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
   }
 
   let optIdx = 0;
+  const queryForHighlight = cls.kind === 'name' ? cls.name : '';
 
   return (
     <Card>
@@ -143,19 +186,38 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
           </button>
         </div>
       )}
-      {isEmpty && <ChapterGrid chapters={chapters} onPick={code => setChapterFilter(code)} />}
+      {filteredHasProducts && (
+        <p className="mt-3 text-sm text-grey">
+          Showing {results.length} {results.length === 1 ? 'product' : 'products'} in Chapter {filteredChapter!.code} — keep typing to narrow.
+        </p>
+      )}
+      {isEmpty && <ChapterGrid chapters={chapters} counts={chapterCounts} onPick={code => setChapterFilter(code)} />}
       {!isEmpty && actions.length > 0 && (
         <ul id={LISTBOX_ID} role="listbox" className="mt-3 divide-y divide-grey-light/40">
-          {showNarrow && knownChapter && (
+          {showDigitNarrow && knownChapter && (
             <NarrowRow
               id={`pl-opt-${optIdx}`}
               chapter={knownChapter}
-              count={products.filter(p => p.hsChapterCode === knownChapter.code).length}
+              count={chapterCounts.get(knownChapter.code) ?? 0}
               active={clampedActive === optIdx}
               onActivate={(idx => () => setActiveIndex(idx))(optIdx++)}
               onSelect={() => performAction({ kind: 'filter', code: knownChapter.code })}
             />
           )}
+          {nameChapterMatches.map(c => {
+            const i = optIdx++;
+            return (
+              <NarrowRow
+                key={c.id}
+                id={`pl-opt-${i}`}
+                chapter={c}
+                count={chapterCounts.get(c.code) ?? 0}
+                active={clampedActive === i}
+                onActivate={() => setActiveIndex(i)}
+                onSelect={() => performAction({ kind: 'filter', code: c.code })}
+              />
+            );
+          })}
           {results.map(p => {
             const i = optIdx++;
             return (
@@ -163,6 +225,7 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
                 key={p.id}
                 id={`pl-opt-${i}`}
                 product={p}
+                highlightQuery={queryForHighlight}
                 active={clampedActive === i}
                 onActivate={() => setActiveIndex(i)}
                 onSelect={() => performAction({ kind: 'commit', hsn: p.hsnPrimary })}
@@ -181,32 +244,69 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
           )}
         </ul>
       )}
+      {extraCount > 0 && (
+        <p className="mt-2 text-xs text-grey">+ {extraCount} more — narrow your search to see them.</p>
+      )}
       {noMatchNode}
     </Card>
   );
 }
 
-function ChapterGrid({ chapters, onPick }: { chapters: HSChapter[]; onPick: (code: string) => void }) {
+function ChapterGrid({
+  chapters, counts, onPick,
+}: { chapters: HSChapter[]; counts: Map<string, number>; onPick: (code: string) => void }) {
   return (
     <div className="mt-4 grid grid-cols-2 gap-2">
-      {chapters.map(c => (
-        <button
-          key={c.id}
-          type="button"
-          aria-pressed={false}
-          onClick={() => onPick(c.code)}
-          className="text-left text-sm text-navy px-3 py-2 rounded border border-grey-light hover:border-orange hover:bg-canvas transition-colors"
-        >
-          <span className="font-mono text-grey">{c.code}</span> · {c.name}
-        </button>
-      ))}
+      {chapters.map(c => {
+        const count = counts.get(c.code) ?? 0;
+        const empty = count === 0;
+        return (
+          <button
+            key={c.id}
+            type="button"
+            data-empty={empty ? 'true' : 'false'}
+            aria-label={`Chapter ${c.code} — ${c.name} (${count} ${count === 1 ? 'product' : 'products'})`}
+            onClick={() => onPick(c.code)}
+            className={`text-left text-sm px-3 py-2 rounded border transition-colors flex items-center justify-between gap-2 ${
+              empty
+                ? 'text-grey/70 border-grey-light/60 hover:border-grey hover:bg-canvas/50'
+                : 'text-navy border-grey-light hover:border-orange hover:bg-canvas'
+            }`}
+          >
+            <span className="truncate">
+              <span className="font-mono text-grey">{c.code}</span> · {c.name}
+            </span>
+            <span className={`text-xs font-mono shrink-0 ${empty ? 'text-grey/60' : 'text-grey'}`}>
+              {count}
+            </span>
+          </button>
+        );
+      })}
     </div>
   );
 }
 
+function HighlightedText({ text, query }: { text: string; query: string }) {
+  const segments = highlightMatch(text, query);
+  return (
+    <>
+      {segments.map((s, i) =>
+        s.match ? <mark key={i} className="bg-yellow/40 text-navy rounded px-0.5">{s.text}</mark> : <span key={i}>{s.text}</span>,
+      )}
+    </>
+  );
+}
+
 function ResultRow({
-  id, product, active, onActivate, onSelect,
-}: { id: string; product: Product; active: boolean; onActivate: () => void; onSelect: () => void }) {
+  id, product, highlightQuery, active, onActivate, onSelect,
+}: {
+  id: string;
+  product: Product;
+  highlightQuery: string;
+  active: boolean;
+  onActivate: () => void;
+  onSelect: () => void;
+}) {
   return (
     <li
       id={id}
@@ -217,14 +317,18 @@ function ResultRow({
       className={`py-2.5 px-2 rounded cursor-pointer ${active ? 'bg-canvas border-l-2 border-navy' : 'hover:bg-canvas border-l-2 border-transparent'}`}
     >
       <div className="flex items-baseline justify-between gap-3">
-        <span className="font-medium text-navy">{product.name}</span>
+        <span className="font-medium text-navy">
+          <HighlightedText text={product.name} query={highlightQuery} />
+        </span>
         <span className="flex items-baseline gap-3">
           <span className="text-xs font-mono text-grey">{product.hsnPrimary}</span>
           <span className={`text-xs ${active ? 'text-navy' : 'text-grey'}`}>Select →</span>
         </span>
       </div>
       {product.description && (
-        <p className="text-xs text-grey mt-0.5 line-clamp-1">{product.description}</p>
+        <p className="text-xs text-grey mt-0.5 line-clamp-1">
+          <HighlightedText text={product.description} query={highlightQuery} />
+        </p>
       )}
     </li>
   );

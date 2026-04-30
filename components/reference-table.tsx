@@ -56,39 +56,44 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
         </div>
         <span
           aria-hidden
-          className={`text-grey group-hover:text-navy transition-transform shrink-0 ml-3 ${open ? 'rotate-180' : ''}`}
+          className={`text-grey group-hover:text-navy transition-transform duration-300 ease-out shrink-0 ml-3 ${open ? 'rotate-180' : ''}`}
         >
           ▼
         </span>
       </button>
-      {open && (
-        <div id="reference-table-body" className="mt-4">
-          <Input placeholder="Search by country, FTA, or COO…" value={q} onChange={e => setQ(e.target.value)} className="max-w-md mb-3" />
-          <div className="overflow-x-auto rounded-xl border border-grey-light/60 bg-white">
-            <table className="w-full text-sm">
-              <thead className="bg-navy text-white">
-                <tr>
-                  {['Origin', 'Destination', 'FTA', 'Free Zone', 'COO', 'Notes'].map(h => (
-                    <th key={h} className="text-left px-4 py-2.5 font-medium">{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((r, i) => (
-                  <tr key={i} className={i % 2 ? 'bg-canvas' : ''}>
-                    <td className="px-4 py-2">{r.origin}</td>
-                    <td className="px-4 py-2">{r.destination}</td>
-                    <td className="px-4 py-2">{r.fta}</td>
-                    <td className="px-4 py-2">{r.isFreeZone ? 'Yes' : ''}</td>
-                    <td className="px-4 py-2">{r.coo}</td>
-                    <td className="px-4 py-2 text-grey">{r.notes}</td>
+      <div
+        id="reference-table-body"
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
+      >
+        <div className="overflow-hidden">
+          <div className="mt-4">
+            <Input placeholder="Search by country, FTA, or COO…" value={q} onChange={e => setQ(e.target.value)} className="max-w-md mb-3" />
+            <div className="overflow-x-auto rounded-xl border border-grey-light/60 bg-white">
+              <table className="w-full text-sm">
+                <thead className="bg-navy text-white">
+                  <tr>
+                    {['Origin', 'Destination', 'FTA', 'Free Zone', 'COO', 'Notes'].map(h => (
+                      <th key={h} className="text-left px-4 py-2.5 font-medium">{h}</th>
+                    ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {rows.map((r, i) => (
+                    <tr key={i} className={i % 2 ? 'bg-canvas' : ''}>
+                      <td className="px-4 py-2">{r.origin}</td>
+                      <td className="px-4 py-2">{r.destination}</td>
+                      <td className="px-4 py-2">{r.fta}</td>
+                      <td className="px-4 py-2">{r.isFreeZone ? 'Yes' : ''}</td>
+                      <td className="px-4 py-2">{r.coo}</td>
+                      <td className="px-4 py-2 text-grey">{r.notes}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </section>
   );
 }

@@ -1,4 +1,6 @@
-const text = (s: string, extra: any = {}) => ({
+type RunExtra = { href?: string; annotations?: Record<string, boolean | string> };
+
+const text = (s: string, extra: RunExtra = {}) => ({
   type: 'text',
   plain_text: s,
   text: { content: s, link: extra.href ? { url: extra.href } : null },

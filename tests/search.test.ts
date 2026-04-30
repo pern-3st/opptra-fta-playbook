@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { searchProductsByName, searchProductsByHSN, normalizeHSN, classifyQuery, searchProducts } from '@/lib/search';
+import { searchProductsByName, searchProductsByHSN, normalizeHSN, classifyQuery, searchProducts, searchChapters, highlightMatch, countProductsByChapter } from '@/lib/search';
 import type { Product, HSChapter } from '@/lib/types';
 
 const products: Product[] = [
@@ -20,6 +20,18 @@ describe('searchProductsByName', () => {
   });
   it('returns empty for empty query', () => {
     expect(searchProductsByName(products, '')).toEqual([]);
+  });
+  it('strips a trailing s as a fallback when the literal query has no hits', () => {
+    const r = searchProductsByName(products, 'mattresses');
+    expect(r.map(p => p.id)).toEqual(['p3']);
+  });
+  it('ranks all-token matches above partial-token matches', () => {
+    const list: Product[] = [
+      { id: 'a', name: 'office gaming chair', hsnPrimary: '94013000', hsnAlternates: [], description: '', hsChapterCode: '94' },
+      { id: 'b', name: 'office desk', hsnPrimary: '94032000', hsnAlternates: [], description: '', hsChapterCode: '94' },
+    ];
+    const r = searchProductsByName(list, 'office chair');
+    expect(r[0].id).toBe('a');
   });
 });
 
@@ -85,6 +97,66 @@ describe('classifyQuery', () => {
     expect(classifyQuery('94.04.29.00', chapters)).toEqual({
       kind: 'hsn', digits: '94042900', knownChapter: chapters[0], exactly8: true,
     });
+  });
+});
+
+describe('searchChapters', () => {
+  it('returns empty for empty query', () => {
+    expect(searchChapters(chapters, '')).toEqual([]);
+  });
+  it('returns empty for digit-only queries (handled by classifyQuery)', () => {
+    expect(searchChapters(chapters, '94')).toEqual([]);
+  });
+  it('matches chapter name case-insensitively', () => {
+    expect(searchChapters(chapters, 'furn').map(c => c.code)).toEqual(['94']);
+    expect(searchChapters(chapters, 'FURNITURE').map(c => c.code)).toEqual(['94']);
+  });
+  it('returns multiple chapters when several match', () => {
+    const more: HSChapter[] = [
+      ...chapters,
+      { id: 'c62', code: '62', name: 'Apparel — woven', description: '', section: '', notes: '' },
+    ];
+    expect(searchChapters(more, 'apparel').map(c => c.code).sort()).toEqual(['61', '62']);
+  });
+  it('caps results to a small number', () => {
+    const many: HSChapter[] = Array.from({ length: 30 }, (_, i) => ({
+      id: `c${i}`, code: String(i).padStart(2, '0'), name: 'Furniture variant', description: '', section: '', notes: '',
+    }));
+    expect(searchChapters(many, 'furn').length).toBeLessThanOrEqual(5);
+  });
+});
+
+describe('highlightMatch', () => {
+  it('returns a single non-match segment when query is empty', () => {
+    expect(highlightMatch('Gaming chair', '')).toEqual([{ text: 'Gaming chair', match: false }]);
+  });
+  it('returns segments around a single match (case-insensitive)', () => {
+    expect(highlightMatch('Gaming chair', 'chair')).toEqual([
+      { text: 'Gaming ', match: false },
+      { text: 'chair', match: true },
+    ]);
+  });
+  it('preserves the original casing of the matched segment', () => {
+    expect(highlightMatch('Cotton T-shirt', 'cotton')).toEqual([
+      { text: 'Cotton', match: true },
+      { text: ' T-shirt', match: false },
+    ]);
+  });
+  it('returns the whole text as a non-match when query is not found', () => {
+    expect(highlightMatch('Gaming chair', 'xyz')).toEqual([{ text: 'Gaming chair', match: false }]);
+  });
+});
+
+describe('countProductsByChapter', () => {
+  it('returns a map of chapter code → product count', () => {
+    const counts = countProductsByChapter(products);
+    expect(counts.get('94')).toBe(2);
+    expect(counts.get('61')).toBe(1);
+    expect(counts.get('87')).toBe(1);
+    expect(counts.get('05')).toBeUndefined();
+  });
+  it('returns an empty map for no products', () => {
+    expect(countProductsByChapter([]).size).toBe(0);
   });
 });
 

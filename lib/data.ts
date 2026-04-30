@@ -1,5 +1,5 @@
 import { unstable_cache } from 'next/cache';
-import { queryAll, listBlocks } from './notion';
+import { queryAll, listBlocks, type NotionPage } from './notion';
 import { mapCountry, mapChapter, mapProduct, mapLane, mapFTAProperties } from './mappers';
 import { blocksToMarkdown } from './blocks-to-md';
 import { sectionFTABody, sectionComplianceDefaults } from './sectioner';
@@ -22,7 +22,7 @@ async function mapInPool<T, U>(items: T[], limit: number, fn: (item: T) => Promi
   return out;
 }
 
-async function fetchFTAWithBody(p: any): Promise<FTA> {
+async function fetchFTAWithBody(p: NotionPage): Promise<FTA> {
   const props = mapFTAProperties(p);
   const blocks = await listBlocks(p.id);
   const md = blocksToMarkdown(blocks);

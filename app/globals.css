@@ -13,6 +13,23 @@
 
   --font-heading: var(--font-heading), 'Spectral', Georgia, serif;
   --font-body: var(--font-body), 'Raleway', system-ui, sans-serif;
+
+  --animate-fade-in: fade-in 220ms ease-out both;
+  --animate-section-in: section-in 280ms ease-out both;
+  --animate-row-in: row-in 200ms ease-out both;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes section-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes row-in {
+    from { opacity: 0; transform: translateY(2px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 }
 
 @layer base {
@@ -20,9 +37,21 @@
     font-family: var(--font-body);
     color: var(--color-grey);
     background: var(--color-canvas);
+    /* Reserve scrollbar gutter so the page doesn't reflow horizontally
+       when content height grows past the viewport (e.g. expanding the
+       reference table). */
+    scrollbar-gutter: stable;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--color-navy);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

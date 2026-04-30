@@ -1,5 +1,37 @@
 import { Client } from '@notionhq/client';
 
+export type NotionProp = {
+  type?: string;
+  title?: Array<{ plain_text?: string }>;
+  rich_text?: Array<{ plain_text?: string }>;
+  select?: { name?: string } | null;
+  number?: number | null;
+  relation?: Array<{ id: string }>;
+  checkbox?: boolean;
+} | null | undefined;
+
+export type NotionPage = {
+  id: string;
+  properties: Record<string, NotionProp>;
+};
+
+export type RichTextRun = {
+  plain_text: string;
+  href?: string | null;
+  annotations?: { bold?: boolean; italic?: boolean; code?: boolean };
+};
+
+type RichTextContainer = { rich_text?: RichTextRun[] };
+
+export type NotionBlock = {
+  type: string;
+  heading_2?: RichTextContainer;
+  heading_3?: RichTextContainer;
+  paragraph?: RichTextContainer;
+  bulleted_list_item?: RichTextContainer;
+  numbered_list_item?: RichTextContainer;
+};
+
 let _client: Client | null = null;
 
 function client(): Client {
@@ -28,24 +60,24 @@ async function resolveDataSourceId(databaseId: string): Promise<string> {
   return id;
 }
 
-export async function queryAll(databaseId: string): Promise<any[]> {
+export async function queryAll(databaseId: string): Promise<NotionPage[]> {
   const dataSourceId = await resolveDataSourceId(databaseId);
-  const out: any[] = [];
+  const out: NotionPage[] = [];
   let cursor: string | undefined;
   do {
     const r = await client().dataSources.query({ data_source_id: dataSourceId, start_cursor: cursor });
-    out.push(...r.results);
+    out.push(...(r.results as unknown as NotionPage[]));
     cursor = r.has_more ? r.next_cursor ?? undefined : undefined;
   } while (cursor);
   return out;
 }
 
-export async function listBlocks(blockId: string): Promise<any[]> {
-  const out: any[] = [];
+export async function listBlocks(blockId: string): Promise<NotionBlock[]> {
+  const out: NotionBlock[] = [];
   let cursor: string | undefined;
   do {
     const r = await client().blocks.children.list({ block_id: blockId, start_cursor: cursor });
-    out.push(...r.results);
+    out.push(...(r.results as unknown as NotionBlock[]));
     cursor = r.has_more ? r.next_cursor ?? undefined : undefined;
   } while (cursor);
   return out;

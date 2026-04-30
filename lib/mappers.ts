@@ -1,7 +1,8 @@
 import { plainText, selectName, num, relationIds, checkbox } from './adapters';
+import type { NotionPage } from './notion';
 import type { Country, HSChapter, FTA, Product, Lane } from './types';
 
-export function mapCountry(p: any): Country {
+export function mapCountry(p: NotionPage): Country {
   return {
     id: p.id,
     name: plainText(p.properties['Country']),
@@ -12,7 +13,7 @@ export function mapCountry(p: any): Country {
   };
 }
 
-export function mapChapter(p: any): HSChapter {
+export function mapChapter(p: NotionPage): HSChapter {
   return {
     id: p.id,
     code: plainText(p.properties['Chapter']),
@@ -23,7 +24,7 @@ export function mapChapter(p: any): HSChapter {
   };
 }
 
-export function mapProduct(p: any): Product {
+export function mapProduct(p: NotionPage): Product {
   const hsnPrimary = plainText(p.properties['HSN']);
   const altsRaw = plainText(p.properties['HSN Alternates']);
   return {
@@ -36,7 +37,7 @@ export function mapProduct(p: any): Product {
   };
 }
 
-export function mapLane(p: any): Lane {
+export function mapLane(p: NotionPage): Lane {
   const ftaIds = relationIds(p.properties['FTA']);
   return {
     id: p.id,
@@ -49,7 +50,7 @@ export function mapLane(p: any): Lane {
   };
 }
 
-export function mapFTAProperties(p: any): Omit<FTA, 'body'> {
+export function mapFTAProperties(p: NotionPage): Omit<FTA, 'body'> {
   return {
     id: p.id,
     name: plainText(p.properties['FTA']),

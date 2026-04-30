@@ -61,41 +61,47 @@ export function PlaybookClient({ data }: { data: PlaybookData }) {
       />
 
       {origin && destination && !resolution && (
-        <p className="text-sm text-grey mb-5 px-1">No FTA configured for this lane.</p>
+        <p key={`no-fta-${origin}-${destination}`} className="text-sm text-grey mb-5 px-1 animate-fade-in">No FTA configured for this lane.</p>
       )}
       {fta && lane && (
-        <FTADetails
-          fta={fta}
-          lane={lane}
-          alternatives={alternatives}
-          originName={originName}
-          destinationName={destinationName}
-          freeZoneFallback={resolution?.freeZoneFallback}
-        />
+        <div key={`fta-${fta.id}-${lane.originId}-${lane.destinationId}`} className="animate-section-in">
+          <FTADetails
+            fta={fta}
+            lane={lane}
+            alternatives={alternatives}
+            originName={originName}
+            destinationName={destinationName}
+            freeZoneFallback={resolution?.freeZoneFallback}
+          />
+        </div>
       )}
 
       {fta && (
-        <ProductLookup
-          products={data.products}
-          chapters={data.chapters}
-          selectedHsn={hsn}
-          onPickHSN={(h) => setSelections({ hsn: h || null })}
-        />
+        <div key={`lookup-${fta.id}`} className="animate-section-in">
+          <ProductLookup
+            products={data.products}
+            chapters={data.chapters}
+            selectedHsn={hsn}
+            onPickHSN={(h) => setSelections({ hsn: h || null })}
+          />
+        </div>
       )}
 
       {fta && lane && hsn && (
-        <Playbook
-          fta={fta}
-          lane={lane}
-          product={product}
-          hsn={hsn}
-          isManualEntry={!product}
-          defaults={data.defaults}
-          fallback={fallbackFTA}
-          originName={originName}
-          destinationName={destinationName}
-          syncedAt={data.syncedAt}
-        />
+        <div key={`playbook-${fta.id}-${hsn}`} className="animate-section-in">
+          <Playbook
+            fta={fta}
+            lane={lane}
+            product={product}
+            hsn={hsn}
+            isManualEntry={!product}
+            defaults={data.defaults}
+            fallback={fallbackFTA}
+            originName={originName}
+            destinationName={destinationName}
+            syncedAt={data.syncedAt}
+          />
+        </div>
       )}
 
       <ReferenceTable

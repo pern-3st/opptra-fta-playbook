@@ -47,16 +47,19 @@ describe('ProductLookup — searching state', () => {
   it('renders result rows with name, HSN, Select affordance, and description', () => {
     renderLookup();
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'chair' } });
-    expect(screen.getByText('Gaming chair')).toBeInTheDocument();
-    expect(screen.getByText('94013000')).toBeInTheDocument();
-    expect(screen.getByText(/Select →/)).toBeInTheDocument();
-    expect(screen.getByText('Office task chairs')).toBeInTheDocument();
+    const option = screen.getAllByRole('option').find(o => o.textContent?.includes('Gaming chair'))!;
+    expect(option).toBeDefined();
+    expect(option.textContent).toContain('Gaming chair');
+    expect(option.textContent).toContain('94013000');
+    expect(option.textContent).toContain('Select →');
+    expect(option.textContent).toContain('Office task chairs');
   });
   it('clicking a row commits via onPickHSN with hsnPrimary', () => {
     const onPick = vi.fn();
     renderLookup({ onPickHSN: onPick });
     fireEvent.change(screen.getByRole('combobox'), { target: { value: 'chair' } });
-    fireEvent.click(screen.getByRole('option', { name: /Gaming chair/i }));
+    const option = screen.getAllByRole('option').find(o => o.textContent?.includes('Gaming chair'))!;
+    fireEvent.click(option);
     expect(onPick).toHaveBeenCalledWith('94013000');
   });
   it('uses listbox/option roles', () => {
@@ -143,6 +146,85 @@ describe('ProductLookup — selected state', () => {
   it('summary card is in an aria-live region', () => {
     const { container } = renderLookup({ selectedHsn: '94013000' });
     expect(container.querySelector('[aria-live="polite"]')).toBeInTheDocument();
+  });
+});
+
+describe('ProductLookup — chapter-name autocomplete', () => {
+  it('surfaces a Narrow-to-Chapter row when the name query matches a chapter name', () => {
+    renderLookup();
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'furniture' } });
+    expect(screen.getByRole('option', { name: /Narrow to Chapter 94 — Furniture/i })).toBeInTheDocument();
+  });
+  it('clicking a chapter-name match sets the filter, does not commit', () => {
+    const onPick = vi.fn();
+    renderLookup({ onPickHSN: onPick });
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'furniture' } });
+    fireEvent.click(screen.getByRole('option', { name: /Narrow to Chapter 94 — Furniture/i }));
+    expect(onPick).not.toHaveBeenCalled();
+    expect(screen.getByText(/Chapter 94 — Furniture/)).toBeInTheDocument();
+  });
+  it('does not duplicate a chapter row when its filter is already active', () => {
+    renderLookup();
+    fireEvent.click(screen.getByRole('button', { name: /94.*Furniture/i }));
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'furniture' } });
+    expect(screen.queryByRole('option', { name: /Narrow to Chapter 94 — Furniture/i })).not.toBeInTheDocument();
+  });
+});
+
+describe('ProductLookup — filtered-chapter messages', () => {
+  it('shows a "keep typing to narrow" hint when filter is set and products exist', () => {
+    renderLookup();
+    fireEvent.click(screen.getByRole('button', { name: /94.*Furniture/i }));
+    expect(screen.getByText(/Showing 2 products in Chapter 94/i)).toBeInTheDocument();
+    expect(screen.getByText(/keep typing to narrow/i)).toBeInTheDocument();
+  });
+  it('shows an empty-chapter message when filter is set and no products exist', () => {
+    const sparse: HSChapter[] = [...chapters, { id: 'c05', code: '05', name: 'Other Animal Products', description: '', section: '', notes: '' }];
+    renderLookup({ chapters: sparse });
+    fireEvent.click(screen.getByRole('button', { name: /05.*Animal/i }));
+    expect(screen.getByText(/No catalogued products in Chapter 05/i)).toBeInTheDocument();
+    expect(screen.getByText(/8.?digit HSN/i)).toBeInTheDocument();
+  });
+});
+
+describe('ProductLookup — chapter grid populations', () => {
+  it('renders a count badge on each chapter chip', () => {
+    renderLookup();
+    expect(screen.getByRole('button', { name: /94.*Furniture.*\b2\b/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /84.*Machinery.*\b0\b/ })).toBeInTheDocument();
+  });
+  it('marks empty chapters with data-empty="true"', () => {
+    renderLookup();
+    const empty = screen.getByRole('button', { name: /84.*Machinery/i });
+    const populated = screen.getByRole('button', { name: /94.*Furniture/i });
+    expect(empty.getAttribute('data-empty')).toBe('true');
+    expect(populated.getAttribute('data-empty')).toBe('false');
+  });
+});
+
+describe('ProductLookup — match highlighting', () => {
+  it('wraps the matched substring of a product name in a <mark>', () => {
+    renderLookup();
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'chair' } });
+    const marks = screen.getAllByText('chair', { selector: 'mark' });
+    expect(marks.length).toBeGreaterThan(0);
+  });
+});
+
+describe('ProductLookup — capped-results hint', () => {
+  it('renders a "+ N more" footer when name results are capped', () => {
+    const many: Product[] = Array.from({ length: 14 }, (_, i) => ({
+      id: `p${i}`, name: `widget ${i}`, hsnPrimary: `9404000${String(i).padStart(1, '0')}`.slice(0, 8),
+      hsnAlternates: [], description: '', hsChapterCode: '94',
+    }));
+    renderLookup({ products: many });
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'widget' } });
+    expect(screen.getByText(/\+\s*4\s*more/i)).toBeInTheDocument();
+  });
+  it('does not render the hint when results fit under the cap', () => {
+    renderLookup();
+    fireEvent.change(screen.getByRole('combobox'), { target: { value: 'chair' } });
+    expect(screen.queryByText(/more.*narrow/i)).not.toBeInTheDocument();
   });
 });
 
