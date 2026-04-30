@@ -1,6 +1,7 @@
 import type { FTA, Lane, Product, ComplianceDefaults } from '@/lib/types';
-import { Card } from './ui/card';
+import { Card, StepHeader } from './ui/card';
 import { Badge } from './ui/badge';
+import { Notice } from './ui/notice';
 import { Markdown } from './markdown';
 import { resolveFallbackPlaybookFields } from '@/lib/fallback';
 
@@ -28,10 +29,10 @@ export function Playbook({ fta, lane, product, hsn, isManualEntry, defaults, fal
 
   return (
     <Card className="bg-canvas">
-      <h2 className="text-xl font-bold text-navy mb-1">Preferential COO Claim Playbook</h2>
-      <p className="text-sm text-grey mb-3">
-        A pre-shipment and at-import checklist for claiming {fta.name} on this consignment. Use it with the business team and the customs broker before the Bill of Entry is filed.
-      </p>
+      <StepHeader
+        title="Preferential COO Claim Playbook"
+        subtitle={`A pre-shipment and at-import checklist for claiming ${fta.name} on this consignment. Use it with the business team and the customs broker before the Bill of Entry is filed.`}
+      />
 
       <div className="flex flex-wrap gap-2 mb-5">
         <Badge tone="navy">{originName} → {destinationName}</Badge>
@@ -76,9 +77,9 @@ export function Playbook({ fta, lane, product, hsn, isManualEntry, defaults, fal
         </div>
       )}
 
-      <div className="mt-6 rounded-xl bg-yellow border border-orange/30 p-4 text-sm text-navy">
+      <Notice className="mt-6">
         <strong>Indicative guidance only.</strong> Duty rates and RoO thresholds shown in this tool are at chapter/heading level and reflect the most commonly cited provisions. Before filing, verify the exact 8-digit rate and RoO against the live customs notification in the destination country and cross-check with the <code>FTA_Import_Duty_Matrix.xlsx</code> workbook. Last synced from source: {REVIEWED_FMT.format(new Date(syncedAt))}.
-      </div>
+      </Notice>
     </Card>
   );
 }

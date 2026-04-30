@@ -5,7 +5,8 @@ export function Select({ className, children, ...rest }: React.SelectHTMLAttribu
     <div className="relative">
       <select
         className={cn(
-          'w-full appearance-none px-3.5 py-2.5 pr-9 border-[1.5px] border-grey-light rounded-lg text-sm text-navy bg-white focus:outline-none focus:border-orange transition-colors disabled:opacity-50 disabled:cursor-not-allowed',
+          'w-full appearance-none px-3.5 py-2.5 pr-9 border-[1.5px] border-grey-light rounded-lg text-sm text-navy bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed',
+          'focus:outline-none focus:border-orange focus-visible:ring-2 focus-visible:ring-orange/40 focus-visible:ring-offset-1',
           className,
         )}
         {...rest}

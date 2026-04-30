@@ -45,7 +45,7 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
         onClick={() => setOpen(o => !o)}
         aria-expanded={open}
         aria-controls="reference-table-body"
-        className="w-full flex items-center justify-between text-left group"
+        className="w-full flex items-center justify-between text-left group rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/40 focus-visible:ring-offset-2"
       >
         <div>
           <h2 className="text-2xl font-bold text-navy mb-1 flex items-center gap-2">

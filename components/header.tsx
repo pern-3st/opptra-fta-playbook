@@ -22,23 +22,26 @@ export function Header({ syncedAt }: { syncedAt: string }) {
   }, []);
 
   return (
-    <header className="bg-navy text-white px-10 py-3.5 flex items-center justify-between">
-      <div className="flex items-center gap-4">
-        <span className="font-heading font-light text-lg">FTA Playbook</span>
-        <span className="text-xs uppercase tracking-widest text-white/45">Opptra Internal</span>
-      </div>
-      <div className="flex items-center gap-3">
-        <span className="text-xs text-white/60">Synced {ago(syncedAt)}</span>
-        <Button
-          disabled={pending}
-          onClick={() => start(async () => {
-            await resyncAction();
-            router.refresh();
-          })}
-          className="bg-white/10 hover:bg-white/20"
-        >
-          {pending ? 'Resyncing…' : 'Resync now'}
-        </Button>
+    <header className="bg-navy text-white">
+      <div className="max-w-5xl mx-auto px-5 py-3.5 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-4 min-w-0">
+          <span className="font-heading font-light text-lg">FTA Playbook</span>
+          <span className="text-xs uppercase tracking-widest text-white/45">Opptra Internal</span>
+        </div>
+        <div className="flex items-center gap-3 shrink-0">
+          <span className="text-xs text-white/60">Synced {ago(syncedAt)}</span>
+          <Button
+            variant="ghost-on-dark"
+            size="sm"
+            disabled={pending}
+            onClick={() => start(async () => {
+              await resyncAction();
+              router.refresh();
+            })}
+          >
+            {pending ? 'Resyncing…' : 'Resync now'}
+          </Button>
+        </div>
       </div>
     </header>
   );

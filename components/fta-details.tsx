@@ -1,6 +1,8 @@
 import type { FTA, Lane } from '@/lib/types';
-import { Card } from './ui/card';
+import { Card, StepHeader } from './ui/card';
 import { Badge } from './ui/badge';
+import { Notice } from './ui/notice';
+import { Tile } from './ui/tile';
 import { Markdown } from './markdown';
 
 interface Props {
@@ -17,15 +19,15 @@ export function FTADetails({ fta, lane, alternatives, originName, destinationNam
 
   return (
     <Card className="border-orange/20">
-      <div className="flex items-start justify-between flex-wrap gap-2 mb-3">
-        <div>
-          <h2 className="text-xl font-bold text-navy">{fta.name}</h2>
-          <p className="text-sm text-grey">{fta.fullName}</p>
-        </div>
-        <Badge tone={fta.status === 'Active' ? 'orange' : 'grey'}>
-          {fta.statusLabel || fta.status}
-        </Badge>
-      </div>
+      <StepHeader
+        title={fta.name}
+        subtitle={fta.fullName}
+        aside={
+          <Badge tone={fta.status === 'Active' ? 'orange' : 'grey'}>
+            {fta.statusLabel || fta.status}
+          </Badge>
+        }
+      />
 
       {freeZoneFallback && (
         <p className="text-xs text-grey mb-3 italic">
@@ -58,11 +60,11 @@ export function FTADetails({ fta, lane, alternatives, originName, destinationNam
       </div>
 
       {(lane.cooForm || lane.notes) && (
-        <Card className="mt-4 bg-yellow border-orange/30">
+        <Notice className="mt-4">
           <Badge tone="orange" className="mb-2">Lane-specific</Badge>
-          {lane.cooForm && <p className="text-sm"><strong>COO form: </strong>{lane.cooForm}</p>}
-          {lane.notes && <p className="text-sm mt-1">{lane.notes}</p>}
-        </Card>
+          {lane.cooForm && <p><strong>COO form: </strong>{lane.cooForm}</p>}
+          {lane.notes && <p className="mt-1">{lane.notes}</p>}
+        </Notice>
       )}
 
       {alternatives.length > 0 && (
@@ -84,18 +86,6 @@ export function FTADetails({ fta, lane, alternatives, originName, destinationNam
         </div>
       )}
     </Card>
-  );
-}
-
-function Tile({ label, value }: { label: string; value: string }) {
-  if (!value) return null;
-  return (
-    <div className="rounded-xl bg-canvas border border-black/5 p-3">
-      {label && (
-        <div className="text-[10px] font-semibold uppercase tracking-wider text-grey mb-1">{label}</div>
-      )}
-      <div className="text-sm text-navy">{value}</div>
-    </div>
   );
 }
 

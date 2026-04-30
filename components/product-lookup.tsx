@@ -3,6 +3,8 @@ import { useMemo, useState, type KeyboardEvent } from 'react';
 import type { Product, HSChapter } from '@/lib/types';
 import { Card, StepHeader } from './ui/card';
 import { Input } from './ui/input';
+import { Button } from './ui/button';
+import { cn } from '@/lib/cn';
 import {
   searchProducts,
   classifyQuery,
@@ -176,14 +178,15 @@ export function ProductLookup({ products, chapters, selectedHsn, onPickHSN }: Pr
       {filteredChapter && (
         <div className="mt-3 inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-canvas border border-grey-light text-sm text-navy">
           <span>Chapter {filteredChapter.code} — {filteredChapter.name}</span>
-          <button
+          <Button
+            variant="link"
             type="button"
             aria-label="Remove chapter filter"
             onClick={() => setChapterFilter(null)}
-            className="text-grey hover:text-navy text-base leading-none"
+            className="text-grey hover:text-navy hover:no-underline text-base leading-none"
           >
             ✕
-          </button>
+          </Button>
         </div>
       )}
       {filteredHasProducts && (
@@ -261,25 +264,27 @@ function ChapterGrid({
         const count = counts.get(c.code) ?? 0;
         const empty = count === 0;
         return (
-          <button
+          <Button
             key={c.id}
+            variant="secondary"
             type="button"
             data-empty={empty ? 'true' : 'false'}
             aria-label={`Chapter ${c.code} — ${c.name} (${count} ${count === 1 ? 'product' : 'products'})`}
             onClick={() => onPick(c.code)}
-            className={`text-left text-sm px-3 py-2 rounded border transition-colors flex items-center justify-between gap-2 ${
+            className={cn(
+              'justify-between gap-2 font-normal text-left',
               empty
                 ? 'text-grey/70 border-grey-light/60 hover:border-grey hover:bg-canvas/50'
-                : 'text-navy border-grey-light hover:border-orange hover:bg-canvas'
-            }`}
+                : 'hover:bg-canvas',
+            )}
           >
             <span className="truncate">
               <span className="font-mono text-grey">{c.code}</span> · {c.name}
             </span>
-            <span className={`text-xs font-mono shrink-0 ${empty ? 'text-grey/60' : 'text-grey'}`}>
+            <span className={cn('text-xs font-mono shrink-0', empty ? 'text-grey/60' : 'text-grey')}>
               {count}
             </span>
-          </button>
+          </Button>
         );
       })}
     </div>
@@ -291,7 +296,7 @@ function HighlightedText({ text, query }: { text: string; query: string }) {
   return (
     <>
       {segments.map((s, i) =>
-        s.match ? <mark key={i} className="bg-yellow/40 text-navy rounded px-0.5">{s.text}</mark> : <span key={i}>{s.text}</span>,
+        s.match ? <mark key={i} className="bg-yellow/40 text-navy rounded-sm px-0.5">{s.text}</mark> : <span key={i}>{s.text}</span>,
       )}
     </>
   );
@@ -314,7 +319,7 @@ function ResultRow({
       aria-selected={active}
       onMouseEnter={onActivate}
       onClick={onSelect}
-      className={`py-2.5 px-2 rounded cursor-pointer ${active ? 'bg-canvas border-l-2 border-navy' : 'hover:bg-canvas border-l-2 border-transparent'}`}
+      className={`py-2.5 px-2 rounded-lg cursor-pointer ${active ? 'bg-canvas border-l-2 border-navy' : 'hover:bg-canvas border-l-2 border-transparent'}`}
     >
       <div className="flex items-baseline justify-between gap-3">
         <span className="font-medium text-navy">
@@ -344,7 +349,7 @@ function NarrowRow({
       aria-selected={active}
       onMouseEnter={onActivate}
       onClick={onSelect}
-      className={`py-2.5 px-2 rounded cursor-pointer text-sm text-navy ${active ? 'bg-canvas' : 'hover:bg-canvas'}`}
+      className={`py-2.5 px-2 rounded-lg cursor-pointer text-sm text-navy ${active ? 'bg-canvas' : 'hover:bg-canvas'}`}
     >
       ↳ Narrow to Chapter {chapter.code} — {chapter.name} ({count} {count === 1 ? 'product' : 'products'})
     </li>
@@ -361,7 +366,7 @@ function EscapeHatchRow({
       aria-selected={active}
       onMouseEnter={onActivate}
       onClick={onSelect}
-      className={`py-2.5 px-2 rounded cursor-pointer text-sm text-navy ${active ? 'bg-yellow' : 'bg-yellow/40 hover:bg-yellow'}`}
+      className={`py-2.5 px-2 rounded-lg cursor-pointer text-sm text-navy ${active ? 'bg-yellow' : 'bg-yellow/40 hover:bg-yellow'}`}
     >
       No product match.{' '}
       <strong>Use HSN <span className="font-mono">{hsn}</span> directly →</strong>{' '}
@@ -396,13 +401,14 @@ function SelectedSummary({
             </>
           )}
         </div>
-        <button
+        <Button
+          variant="link"
           type="button"
           onClick={onChange}
-          className="text-sm text-orange hover:underline shrink-0"
+          className="text-sm shrink-0"
         >
           Change
-        </button>
+        </Button>
       </div>
     </Card>
   );

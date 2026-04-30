@@ -3,6 +3,8 @@ import { useMemo } from 'react';
 import type { Country, Lane } from '@/lib/types';
 import { Card, StepHeader } from './ui/card';
 import { Select } from './ui/select';
+import { Field } from './ui/field';
+import { Checkbox } from './ui/checkbox';
 
 interface Props {
   countries: Country[];
@@ -28,26 +30,26 @@ export function LaneSelector({ countries, lanes, origin, destination, freeZone, 
     <Card>
       <StepHeader num={1} title="Select Trade Lane" subtitle="Choose origin and destination to identify the applicable FTA" />
       <div className="flex flex-col md:flex-row gap-3 md:items-end">
-        <div className="flex-1">
-          <label className="block text-xs font-semibold uppercase tracking-wider text-grey mb-1.5">Origin</label>
+        <Field label="Origin" className="flex-1">
           <Select value={origin ?? ''} onChange={e => onChange({ origin: e.target.value || null, destination: null })}>
             <option value="">— Select origin —</option>
             {originOptions.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
           </Select>
-        </div>
+        </Field>
         <div className="hidden md:block text-orange text-2xl font-bold pb-2">→</div>
-        <div className="flex-1">
-          <label className="block text-xs font-semibold uppercase tracking-wider text-grey mb-1.5">Destination</label>
+        <Field label="Destination" className="flex-1">
           <Select value={destination ?? ''} disabled={!origin} onChange={e => onChange({ destination: e.target.value || null })}>
             <option value="">{origin ? '— Select destination —' : '— Select origin first —'}</option>
             {destOptions.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
           </Select>
-        </div>
+        </Field>
       </div>
-      <label className="flex items-center gap-2 mt-4 text-sm">
-        <input type="checkbox" checked={freeZone} onChange={e => onChange({ freeZone: e.target.checked })} />
-        <span>This shipment involves a Free Zone / SEZ</span>
-      </label>
+      <Checkbox
+        wrapperClassName="mt-4"
+        checked={freeZone}
+        onChange={e => onChange({ freeZone: e.target.checked })}
+        label="This shipment involves a Free Zone / SEZ"
+      />
     </Card>
   );
 }
