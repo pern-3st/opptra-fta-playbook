@@ -1,7 +1,8 @@
 'use client';
 import { useMemo, useState } from 'react';
-import type { Country, FTA, Lane } from '@/lib/types';
+import type { Country, FTA, FTAStatus, Lane } from '@/lib/types';
 import { matchingFTAs } from '@/lib/resolve-fta';
+import { statusTone } from '@/lib/status';
 import { cn } from '@/lib/cn';
 import { Disclosure } from './ui/disclosure';
 import { SearchInput } from './ui/search-input';
@@ -26,20 +27,23 @@ interface Row {
   ftaId: string;
   fta: string;
   alternates: string[];
+  status: FTAStatus;
+  statusLabel: string;
   coo: string;
   notes: string;
   isFreeZone: boolean;
 }
 
-type SortKey = 'origin' | 'destination' | 'fta' | 'coo';
+type SortKey = 'origin' | 'destination' | 'fta' | 'status' | 'coo';
 type SortDir = 'asc' | 'desc';
 type FzFilter = 'all' | 'std' | 'fz';
 
 const COLUMNS: { key: SortKey | 'notes'; label: string; width: string; sortable: boolean }[] = [
-  { key: 'origin', label: 'Origin', width: '20%', sortable: true },
-  { key: 'destination', label: 'Destination', width: '22%', sortable: true },
-  { key: 'fta', label: 'FTA', width: '24%', sortable: true },
-  { key: 'coo', label: 'COO Form', width: '28%', sortable: true },
+  { key: 'origin', label: 'Origin', width: '17%', sortable: true },
+  { key: 'destination', label: 'Destination', width: '19%', sortable: true },
+  { key: 'fta', label: 'FTA', width: '20%', sortable: true },
+  { key: 'status', label: 'Status', width: '16%', sortable: true },
+  { key: 'coo', label: 'COO Form', width: '22%', sortable: true },
   { key: 'notes', label: '', width: '6%', sortable: false },
 ];
 
@@ -70,6 +74,24 @@ function regionGroups(countries: Country[]): ComboboxGroup[] {
     }));
 }
 
+function statusGroups(rows: Row[]): ComboboxGroup[] {
+  const ORDER: Record<string, number> = { Active: 0, 'Under Review': 1, Negotiating: 2, Paused: 3, Inactive: 4, None: 5 };
+  const seen = new Map<string, number>();
+  for (const r of rows) {
+    if (!r.status) continue;
+    if (!seen.has(r.status)) seen.set(r.status, seen.size);
+  }
+  const options = Array.from(seen.keys())
+    .sort((a, b) => (ORDER[a] ?? 99) - (ORDER[b] ?? 99) || a.localeCompare(b))
+    .map(s => ({ value: s, label: s }));
+  return options.length > 0 ? [{ label: 'Status', options }] : [];
+}
+
+function sortValue(r: Row, key: SortKey): string {
+  if (key === 'status') return (r.statusLabel || r.status || '').toLowerCase();
+  return r[key].toString().toLowerCase();
+}
+
 function ftaGroups(ftas: FTA[]): ComboboxGroup[] {
   const sorted = ftas.slice().sort(
     (a, b) =>
@@ -88,6 +110,7 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
   const [originFilter, setOriginFilter] = useState<string | null>(null);
   const [destinationFilter, setDestinationFilter] = useState<string | null>(null);
   const [ftaFilter, setFtaFilter] = useState<string | null>(null);
+  const [statusFilter, setStatusFilter] = useState<string | null>(null);
   const [fzFilter, setFzFilter] = useState<FzFilter>('all');
   const [sortKey, setSortKey] = useState<SortKey>('origin');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
@@ -117,6 +140,8 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
           ftaId: primary.id,
           fta: primary.shortCode || primary.name,
           alternates,
+          status: primary.status,
+          statusLabel: primary.statusLabel,
           coo: stdLane?.cooForm || primary.cooForm || '—',
           notes: stdLane?.notes ?? '',
           isFreeZone: false,
@@ -131,6 +156,8 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
             ftaId: primary.id,
             fta: primary.shortCode || primary.name,
             alternates,
+            status: primary.status,
+            statusLabel: primary.statusLabel,
             coo: fzLane.cooForm || primary.cooForm || '—',
             notes: fzLane.notes,
             isFreeZone: true,
@@ -153,6 +180,7 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
       if (originFilter && r.originId !== originFilter) return false;
       if (destinationFilter && r.destinationId !== destinationFilter) return false;
       if (ftaFilter && r.ftaId !== ftaFilter) return false;
+      if (statusFilter && r.status !== statusFilter) return false;
       if (fzFilter === 'std' && r.isFreeZone) return false;
       if (fzFilter === 'fz' && !r.isFreeZone) return false;
       if (!term) return true;
@@ -161,17 +189,19 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
         r.destination.toLowerCase().includes(term) ||
         r.fta.toLowerCase().includes(term) ||
         r.alternates.some(a => a.toLowerCase().includes(term)) ||
+        r.statusLabel.toLowerCase().includes(term) ||
+        r.status.toLowerCase().includes(term) ||
         r.coo.toLowerCase().includes(term) ||
         r.notes.toLowerCase().includes(term)
       );
     });
-  }, [allRows, q, originFilter, destinationFilter, ftaFilter, fzFilter]);
+  }, [allRows, q, originFilter, destinationFilter, ftaFilter, statusFilter, fzFilter]);
 
   const sorted = useMemo(() => {
     const dir = sortDir === 'asc' ? 1 : -1;
     return filtered.slice().sort((a, b) => {
-      const av = a[sortKey].toString().toLowerCase();
-      const bv = b[sortKey].toString().toLowerCase();
+      const av = sortValue(a, sortKey);
+      const bv = sortValue(b, sortKey);
       if (av < bv) return -1 * dir;
       if (av > bv) return 1 * dir;
       // Stable secondary ordering: keep std/fz pairs together with std first
@@ -182,11 +212,12 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
   }, [filtered, sortKey, sortDir]);
 
   const filtersActive =
-    !!q || !!originFilter || !!destinationFilter || !!ftaFilter || fzFilter !== 'all';
+    !!q || !!originFilter || !!destinationFilter || !!ftaFilter || !!statusFilter || fzFilter !== 'all';
 
   const originOptionGroups = useMemo(() => regionGroups(countries), [countries]);
   const destinationOptionGroups = useMemo(() => regionGroups(countries), [countries]);
   const ftaOptionGroups = useMemo(() => ftaGroups(ftasInPlay), [ftasInPlay]);
+  const statusOptionGroups = useMemo(() => statusGroups(allRows), [allRows]);
 
   function toggleSort(key: SortKey) {
     if (key === sortKey) setSortDir(d => (d === 'asc' ? 'desc' : 'asc'));
@@ -201,6 +232,7 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
     setOriginFilter(null);
     setDestinationFilter(null);
     setFtaFilter(null);
+    setStatusFilter(null);
     setFzFilter('all');
   }
 
@@ -219,12 +251,15 @@ export function ReferenceTable({ countries, ftas, lanes, defaultCollapsed = fals
         originGroups={originOptionGroups}
         destinationGroups={destinationOptionGroups}
         ftaGroups={ftaOptionGroups}
+        statusGroups={statusOptionGroups}
         originFilter={originFilter}
         onOriginFilter={setOriginFilter}
         destinationFilter={destinationFilter}
         onDestinationFilter={setDestinationFilter}
         ftaFilter={ftaFilter}
         onFtaFilter={setFtaFilter}
+        statusFilter={statusFilter}
+        onStatusFilter={setStatusFilter}
         fzFilter={fzFilter}
         onFzFilter={setFzFilter}
         showClear={filtersActive}
@@ -356,6 +391,11 @@ function TableRow({
           )}
         </div>
       </td>
+      <td className="px-4 py-2.5">
+        {row.status && (
+          <Badge {...statusTone(row.status)}>{row.statusLabel || row.status}</Badge>
+        )}
+      </td>
       <td className="px-4 py-2.5 text-navy">{row.coo}</td>
       <td className="px-4 py-2.5">
         {row.notes && (
@@ -378,12 +418,15 @@ interface FiltersBarProps {
   originGroups: ComboboxGroup[];
   destinationGroups: ComboboxGroup[];
   ftaGroups: ComboboxGroup[];
+  statusGroups: ComboboxGroup[];
   originFilter: string | null;
   onOriginFilter: (v: string | null) => void;
   destinationFilter: string | null;
   onDestinationFilter: (v: string | null) => void;
   ftaFilter: string | null;
   onFtaFilter: (v: string | null) => void;
+  statusFilter: string | null;
+  onStatusFilter: (v: string | null) => void;
   fzFilter: FzFilter;
   onFzFilter: (v: FzFilter) => void;
   showClear: boolean;
@@ -398,12 +441,15 @@ function FiltersBar({
   originGroups,
   destinationGroups,
   ftaGroups,
+  statusGroups,
   originFilter,
   onOriginFilter,
   destinationFilter,
   onDestinationFilter,
   ftaFilter,
   onFtaFilter,
+  statusFilter,
+  onStatusFilter,
   fzFilter,
   onFzFilter,
   showClear,
@@ -418,7 +464,7 @@ function FiltersBar({
           className="md:col-span-4"
           value={q}
           onChange={onQ}
-          placeholder="Search country, FTA, COO, notes…"
+          placeholder="Search country, FTA, status, COO, notes…"
         />
         <Combobox
           className="md:col-span-3"
@@ -447,6 +493,14 @@ function FiltersBar({
       </div>
       <div className="flex flex-wrap items-center gap-3">
         <SegmentedFreeZone value={fzFilter} onChange={onFzFilter} />
+        <Combobox
+          className="w-full md:w-56"
+          aria-label="Filter by status"
+          groups={statusGroups}
+          value={statusFilter}
+          onChange={onStatusFilter}
+          placeholder="All statuses"
+        />
         <div className="ml-auto flex items-center gap-3 text-xs text-grey">
           <span>
             Showing <span className="font-semibold text-navy">{showing}</span> of {total}

@@ -12,7 +12,7 @@ Intro paragraph two.
 
 ## Chapter Notes
 
-Sensitive chapters: 24, 87.
+Sensitive chapters: 24, 87
 
 ## Extra Points
 
@@ -51,10 +51,10 @@ describe('sectionFTABody', () => {
     const out = sectionFTABody(ftaSample);
     expect(out.description).toBe('Intro paragraph one.\n\nIntro paragraph two.');
     expect(out.tracks).toBe('- Normal: 0%\n- Sensitive: 5%');
-    expect(out.chapterNotes).toBe('Sensitive chapters: 24, 87.');
+    expect(out.chapterNotes).toBe('Sensitive chapters: 24, 87');
     expect(out.extras).toBe('- Third-party invoicing allowed.');
     expect(out.resources).toBe('- [ATIGA Text](https://asean.org/book/atiga/)');
-    expect(out.chapterClassifications).toEqual({ sensitive: ['10', '17', '26', '27'], excluded: ['93'] });
+    expect(out.chapterClassifications).toEqual({ sensitive: ['24', '87', '10', '17', '26', '27'], excluded: ['93'] });
   });
 
   it('returns empty values for missing sections', () => {
@@ -82,6 +82,11 @@ describe('parseChapterClassifications', () => {
   it('returns empty arrays when section is empty or labels missing', () => {
     expect(parseChapterClassifications('')).toEqual({ sensitive: [], excluded: [] });
     expect(parseChapterClassifications('- Sensitive:')).toEqual({ sensitive: [], excluded: [] });
+  });
+
+  it('accepts the migration-emitted "Sensitive chapters" / "Exclusion chapters" labels', () => {
+    const out = parseChapterClassifications('Sensitive chapters: 10, 17, 26, 27\nExclusion chapters: 93');
+    expect(out).toEqual({ sensitive: ['10', '17', '26', '27'], excluded: ['93'] });
   });
 
   it('tolerates extra whitespace and bullet variants', () => {

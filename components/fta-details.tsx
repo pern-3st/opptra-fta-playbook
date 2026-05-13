@@ -1,4 +1,5 @@
 import type { FTA, Lane } from '@/lib/types';
+import { statusTone } from '@/lib/status';
 import { Card, StepHeader } from './ui/card';
 import { Badge } from './ui/badge';
 import { Notice } from './ui/notice';
@@ -23,7 +24,7 @@ export function FTADetails({ fta, lane, alternatives, originName, destinationNam
         title={fta.name}
         subtitle={fta.fullName}
         aside={
-          <Badge tone={fta.status === 'Active' ? 'orange' : 'grey'}>
+          <Badge {...statusTone(fta.status)}>
             {fta.statusLabel || fta.status}
           </Badge>
         }

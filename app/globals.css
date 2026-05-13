@@ -10,6 +10,9 @@
   --color-grey: #5A5A5A;
   --color-grey-light: #CECECE;
   --color-canvas: #F3F4F8;
+  --color-green: #2E7D32;
+  --color-blue: #1565C0;
+  --color-amber: #BF360C;
 
   --font-heading: var(--font-heading), 'Spectral', Georgia, serif;
   --font-body: var(--font-body), 'Raleway', system-ui, sans-serif;

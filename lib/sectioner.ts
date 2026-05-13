@@ -62,7 +62,9 @@ export function sectionFTABody(md: string): FTASections {
     chapterNotes: raw.chapterNotes,
     extras: raw.extras,
     resources: raw.resources,
-    chapterClassifications: parseChapterClassifications(raw.chapterClassifications),
+    chapterClassifications: parseChapterClassifications(
+      [raw.chapterNotes, raw.chapterClassifications].filter(Boolean).join('\n'),
+    ),
   };
 }
 
@@ -75,8 +77,8 @@ export function parseChapterClassifications(md: string): ChapterClassifications 
     if (colon === -1) continue;
     const label = line.slice(0, colon).trim().toLowerCase();
     const codes = line.slice(colon + 1).split(/[,\s]+/).map(s => s.trim()).filter(Boolean);
-    if (label === 'sensitive' || label === 'sensitive list') out.sensitive.push(...codes);
-    else if (label === 'excluded' || label === 'exclusion' || label === 'exclusion list') out.excluded.push(...codes);
+    if (label === 'sensitive' || label === 'sensitive list' || label === 'sensitive chapters') out.sensitive.push(...codes);
+    else if (label === 'excluded' || label === 'exclusion' || label === 'exclusion list' || label === 'exclusion chapters') out.excluded.push(...codes);
   }
   return out;
 }
